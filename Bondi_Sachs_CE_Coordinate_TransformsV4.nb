@@ -87329,7 +87329,7 @@ Cell[BoxData[
     "PDr", ",", "PDu", ",", "Eth", ",", "Ethbar", ",", "PDy", ",", "PDnu", 
      ",", "nEth", ",", "nEthbar"}], "}"}]}], ";"}]], "Input",
  CellLabel->"In[423]:=",ExpressionUUID->"5d6c7986-d104-4734-a1b0-90c8ae7388c3"]
-}, Open  ]],
+}, Closed]],
 
 Cell[CellGroupData[{
 
@@ -99638,7 +99638,7 @@ Cell[BoxData[
   "Column"]], "Output",
  CellLabel->"Out[511]=",ExpressionUUID->"38346def-849c-462f-bc8f-3da25eee7114"]
 }, Open  ]]
-}, Open  ]],
+}, Closed]],
 
 Cell[CellGroupData[{
 
@@ -102377,67 +102377,6 @@ Cell[BoxData[
 Cell[CellGroupData[{
 
 Cell[BoxData[
- RowBox[{
-  RowBox[{
-   RowBox[{
-    RowBox[{"-", 
-     InterpretationBox[
-      StyleBox[
-       OverscriptBox["J", "_"],
-       ShowAutoStyles->False,
-       AutoSpacing->False],
-      $CellContext`Jb[],
-      Editable->False]}], " ", 
-    InterpretationBox[
-     StyleBox[
-      RowBox[{
-       SubscriptBox["\[PartialD]", "y"], "[", 
-       InterpretationBox[
-        StyleBox["J",
-         ShowAutoStyles->False,
-         AutoSpacing->False],
-        $CellContext`J[],
-        Editable->False], "]"}],
-      ShowAutoStyles->False,
-      AutoSpacing->False],
-     $CellContext`PDy[
-      $CellContext`J[]],
-     Editable->False]}], "+", 
-   RowBox[{
-    InterpretationBox[
-     StyleBox["J",
-      ShowAutoStyles->False,
-      AutoSpacing->False],
-     $CellContext`J[],
-     Editable->False], " ", 
-    InterpretationBox[
-     StyleBox[
-      RowBox[{
-       SubscriptBox["\[PartialD]", "y"], "[", 
-       InterpretationBox[
-        StyleBox[
-         OverscriptBox["J", "_"],
-         ShowAutoStyles->False,
-         AutoSpacing->False],
-        $CellContext`Jb[],
-        Editable->False], "]"}],
-      ShowAutoStyles->False,
-      AutoSpacing->False],
-     $CellContext`PDy[
-      $CellContext`Jb[]],
-     Editable->False]}]}], "//", "InputForm"}]], "Input",
- CellLabel->
-  "In[697]:=",ExpressionUUID->"1c8b8fe8-4fda-4aa4-8913-6391b79619c6"],
-
-Cell["-(Jb[]*PDy[J[]]) + J[]*PDy[Jb[]]", "Output",
- CellLabel->
-  "Out[697]//InputForm=",ExpressionUUID->"c37d869c-80a9-48f7-a2d1-\
-b78ae69f7073"]
-}, Open  ]],
-
-Cell[CellGroupData[{
-
-Cell[BoxData[
  RowBox[{"NPeManual", "=", 
   RowBox[{
    FractionBox[
@@ -102573,6 +102512,640 @@ Cell[BoxData[
 
 Cell[BoxData["True"], "Output",
  CellLabel->"Out[700]=",ExpressionUUID->"fbf7d2e0-c4c6-4353-a021-f5ec86bcf64c"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"NPk", "[", "]"}], "/.", "SubNPScalars"}]], "Input",
+ CellLabel->
+  "In[703]:=",ExpressionUUID->"410145c8-3127-485e-ac28-9b8718bdd209"],
+
+Cell[BoxData["0"], "Output",
+ CellLabel->"Out[703]=",ExpressionUUID->"eea88b46-dc28-46d5-b04c-b8e99a25af30"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"NPtAuto", "=", 
+  RowBox[{"Collect", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{
+          RowBox[{
+           RowBox[{
+            RowBox[{
+             RowBox[{"NPt", "[", "]"}], "/.", "SubNPScalars"}], "/.", 
+            "PDuJtoH"}], "/.", "VtoW"}], "//.", "ScalarPDToNumericalCoords"}],
+          "//.", "ScalarDerivLeibniz"}], ")"}], "/.", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"y", "[", "]"}], "->", 
+         RowBox[{"1", "-", 
+          RowBox[{"OneMinusY", "[", "]"}]}]}], "}"}]}], "/.", 
+      RowBox[{
+       RowBox[{"K", "[", "]"}], "->", 
+       RowBox[{
+        RowBox[{"OnePlusK", "[", "]"}], "-", "1"}]}]}], "//", "Simplify"}], 
+    ",", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"R", "[", "]"}], ",", 
+      RowBox[{"OneMinusY", "[", "]"}], ",", 
+      RowBox[{"OnePlusK", "[", "]"}], ",", 
+      RowBox[{"J", "[", "]"}]}], "}"}]}], "]"}]}]], "Input",
+ CellLabel->
+  "In[705]:=",ExpressionUUID->"6ff9b73e-48c0-4aa1-b4c3-2cea6d922862"],
+
+Cell[BoxData[
+ FractionBox[
+  RowBox[{
+   InterpretationBox[
+    StyleBox[
+     RowBox[{"(", 
+      RowBox[{"1", "-", "y"}], ")"}],
+     ShowAutoStyles->False,
+     AutoSpacing->False],
+    $CellContext`OneMinusY[],
+    Editable->False], " ", 
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{
+      FractionBox["1", "8"], " ", 
+      SqrtBox[
+       InterpretationBox[
+        StyleBox[
+         RowBox[{"(", 
+          RowBox[{"1", "+", "K"}], ")"}],
+         ShowAutoStyles->False,
+         AutoSpacing->False],
+        $CellContext`OnePlusK[],
+        Editable->False]], " ", 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"2", " ", 
+         InterpretationBox[
+          StyleBox[
+           RowBox[{"\[PartialD]", "[", 
+            InterpretationBox[
+             StyleBox["\[Beta]",
+              ShowAutoStyles->False,
+              AutoSpacing->False],
+             $CellContext`be[],
+             Editable->False], "]"}],
+           ShowAutoStyles->False,
+           AutoSpacing->False],
+          $CellContext`Eth[
+           $CellContext`be[]],
+          Editable->False]}], "-", 
+        InterpretationBox[
+         StyleBox[
+          SubscriptBox["Q", "q"],
+          ShowAutoStyles->False,
+          AutoSpacing->False],
+         $CellContext`Qq[],
+         Editable->False]}], ")"}]}], "+", 
+     RowBox[{
+      FractionBox["1", "8"], " ", 
+      InterpretationBox[
+       StyleBox["J",
+        ShowAutoStyles->False,
+        AutoSpacing->False],
+       $CellContext`J[],
+       Editable->False], " ", 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"-", "2"}], " ", 
+         InterpretationBox[
+          StyleBox[
+           RowBox[{
+            OverscriptBox["\[PartialD]", "_"], "[", 
+            InterpretationBox[
+             StyleBox["\[Beta]",
+              ShowAutoStyles->False,
+              AutoSpacing->False],
+             $CellContext`be[],
+             Editable->False], "]"}],
+           ShowAutoStyles->False,
+           AutoSpacing->False],
+          $CellContext`Ethbar[
+           $CellContext`be[]],
+          Editable->False], " ", 
+         SqrtBox[
+          FractionBox["1", 
+           InterpretationBox[
+            StyleBox[
+             RowBox[{"(", 
+              RowBox[{"1", "+", "K"}], ")"}],
+             ShowAutoStyles->False,
+             AutoSpacing->False],
+            $CellContext`OnePlusK[],
+            Editable->False]]]}], "+", 
+        RowBox[{
+         SqrtBox[
+          FractionBox["1", 
+           InterpretationBox[
+            StyleBox[
+             RowBox[{"(", 
+              RowBox[{"1", "+", "K"}], ")"}],
+             ShowAutoStyles->False,
+             AutoSpacing->False],
+            $CellContext`OnePlusK[],
+            Editable->False]]], " ", 
+         InterpretationBox[
+          StyleBox[
+           SubscriptBox["Q", 
+            OverscriptBox["q", "_"]],
+           ShowAutoStyles->False,
+           AutoSpacing->False],
+          $CellContext`Qqb[],
+          Editable->False]}]}], ")"}]}]}], ")"}]}], 
+  InterpretationBox[
+   StyleBox["R",
+    ShowAutoStyles->False,
+    AutoSpacing->False],
+   $CellContext`R[],
+   Editable->False]]], "Output",
+ CellLabel->"Out[705]=",ExpressionUUID->"ef809f0d-9e3b-4108-8adb-6c64ddc63704"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"NPtManual", "=", 
+  RowBox[{
+   FractionBox[
+    RowBox[{"OneMinusY", "[", "]"}], 
+    RowBox[{"8", 
+     RowBox[{"R", "[", "]"}]}]], 
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{
+      SqrtBox[
+       RowBox[{"OnePlusK", "[", "]"}]], 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"2", 
+         RowBox[{"Eth", "[", 
+          RowBox[{"be", "[", "]"}], "]"}]}], "-", 
+        RowBox[{"Qq", "[", "]"}]}], ")"}]}], "+", 
+     RowBox[{
+      FractionBox[
+       RowBox[{"J", "[", "]"}], 
+       SqrtBox[
+        RowBox[{"OnePlusK", "[", "]"}]]], 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"Qqb", "[", "]"}], "-", 
+        RowBox[{"2", 
+         RowBox[{"Ethbar", "[", 
+          RowBox[{"be", "[", "]"}], "]"}]}]}], ")"}]}]}], ")"}]}]}]], "Input",
+ 
+ CellLabel->
+  "In[707]:=",ExpressionUUID->"b623b474-50c4-4637-be27-b266f6e3ca2a"],
+
+Cell[BoxData[
+ FractionBox[
+  RowBox[{
+   InterpretationBox[
+    StyleBox[
+     RowBox[{"(", 
+      RowBox[{"1", "-", "y"}], ")"}],
+     ShowAutoStyles->False,
+     AutoSpacing->False],
+    $CellContext`OneMinusY[],
+    Editable->False], " ", 
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{
+      SqrtBox[
+       InterpretationBox[
+        StyleBox[
+         RowBox[{"(", 
+          RowBox[{"1", "+", "K"}], ")"}],
+         ShowAutoStyles->False,
+         AutoSpacing->False],
+        $CellContext`OnePlusK[],
+        Editable->False]], " ", 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"2", " ", 
+         InterpretationBox[
+          StyleBox[
+           RowBox[{"\[PartialD]", "[", 
+            InterpretationBox[
+             StyleBox["\[Beta]",
+              ShowAutoStyles->False,
+              AutoSpacing->False],
+             $CellContext`be[],
+             Editable->False], "]"}],
+           ShowAutoStyles->False,
+           AutoSpacing->False],
+          $CellContext`Eth[
+           $CellContext`be[]],
+          Editable->False]}], "-", 
+        InterpretationBox[
+         StyleBox[
+          SubscriptBox["Q", "q"],
+          ShowAutoStyles->False,
+          AutoSpacing->False],
+         $CellContext`Qq[],
+         Editable->False]}], ")"}]}], "+", 
+     FractionBox[
+      RowBox[{
+       InterpretationBox[
+        StyleBox["J",
+         ShowAutoStyles->False,
+         AutoSpacing->False],
+        $CellContext`J[],
+        Editable->False], " ", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"-", "2"}], " ", 
+          InterpretationBox[
+           StyleBox[
+            RowBox[{
+             OverscriptBox["\[PartialD]", "_"], "[", 
+             InterpretationBox[
+              StyleBox["\[Beta]",
+               ShowAutoStyles->False,
+               AutoSpacing->False],
+              $CellContext`be[],
+              Editable->False], "]"}],
+            ShowAutoStyles->False,
+            AutoSpacing->False],
+           $CellContext`Ethbar[
+            $CellContext`be[]],
+           Editable->False]}], "+", 
+         InterpretationBox[
+          StyleBox[
+           SubscriptBox["Q", 
+            OverscriptBox["q", "_"]],
+           ShowAutoStyles->False,
+           AutoSpacing->False],
+          $CellContext`Qqb[],
+          Editable->False]}], ")"}]}], 
+      SqrtBox[
+       InterpretationBox[
+        StyleBox[
+         RowBox[{"(", 
+          RowBox[{"1", "+", "K"}], ")"}],
+         ShowAutoStyles->False,
+         AutoSpacing->False],
+        $CellContext`OnePlusK[],
+        Editable->False]]]}], ")"}]}], 
+  RowBox[{"8", " ", 
+   InterpretationBox[
+    StyleBox["R",
+     ShowAutoStyles->False,
+     AutoSpacing->False],
+    $CellContext`R[],
+    Editable->False]}]]], "Output",
+ CellLabel->"Out[707]=",ExpressionUUID->"fab8b753-75b9-4df4-a4a1-bedce74c6c73"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"NPtAuto", "==", "NPtManual"}], "//", "PowerExpand"}], "//", 
+  "Simplify"}]], "Input",
+ CellLabel->
+  "In[711]:=",ExpressionUUID->"ab4aea42-9d70-4b6b-a41c-31b68a5955ad"],
+
+Cell[BoxData["True"], "Output",
+ CellLabel->"Out[711]=",ExpressionUUID->"ba29cfda-b8ac-4d3c-98d3-80e2fe8ccb56"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"NPsAuto", "=", 
+  RowBox[{"Collect", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{
+          RowBox[{
+           RowBox[{
+            RowBox[{
+             RowBox[{"NPs", "[", "]"}], "/.", "SubNPScalars"}], "/.", 
+            "PDuJtoH"}], "/.", "VtoW"}], "//.", "ScalarPDToNumericalCoords"}],
+          "//.", "ScalarDerivLeibniz"}], ")"}], "/.", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"y", "[", "]"}], "->", 
+         RowBox[{"1", "-", 
+          RowBox[{"OneMinusY", "[", "]"}]}]}], "}"}]}], "/.", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"1", "+", 
+         RowBox[{"K", "[", "]"}]}], "->", 
+        RowBox[{"OnePlusK", "[", "]"}]}], "}"}]}], "//", "Simplify"}], ",", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"R", "[", "]"}], ",", 
+      RowBox[{"OneMinusY", "[", "]"}], ",", 
+      RowBox[{"J", "[", "]"}]}], "}"}]}], "]"}]}]], "Input",
+ CellLabel->
+  "In[718]:=",ExpressionUUID->"6cd4b532-72c5-4d6b-8a28-da802bdeeb07"],
+
+Cell[BoxData[
+ FractionBox[
+  RowBox[{
+   SuperscriptBox[
+    InterpretationBox[
+     StyleBox[
+      RowBox[{"(", 
+       RowBox[{"1", "-", "y"}], ")"}],
+      ShowAutoStyles->False,
+      AutoSpacing->False],
+     $CellContext`OneMinusY[],
+     Editable->False], "2"], " ", 
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{"-", 
+      FractionBox[
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{"1", "+", 
+          InterpretationBox[
+           StyleBox["K",
+            ShowAutoStyles->False,
+            AutoSpacing->False],
+           K[],
+           Editable->False]}], ")"}], " ", 
+        InterpretationBox[
+         StyleBox[
+          RowBox[{
+           SubscriptBox["\[PartialD]", "y"], "[", 
+           InterpretationBox[
+            StyleBox["J",
+             ShowAutoStyles->False,
+             AutoSpacing->False],
+            $CellContext`J[],
+            Editable->False], "]"}],
+          ShowAutoStyles->False,
+          AutoSpacing->False],
+         $CellContext`PDy[
+          $CellContext`J[]],
+         Editable->False]}], 
+       RowBox[{"8", " ", 
+        SqrtBox["2"], " ", 
+        InterpretationBox[
+         StyleBox["K",
+          ShowAutoStyles->False,
+          AutoSpacing->False],
+         K[],
+         Editable->False]}]]}], "+", 
+     FractionBox[
+      RowBox[{
+       SuperscriptBox[
+        InterpretationBox[
+         StyleBox["J",
+          ShowAutoStyles->False,
+          AutoSpacing->False],
+         $CellContext`J[],
+         Editable->False], "2"], " ", 
+       InterpretationBox[
+        StyleBox[
+         RowBox[{
+          SubscriptBox["\[PartialD]", "y"], "[", 
+          InterpretationBox[
+           StyleBox[
+            OverscriptBox["J", "_"],
+            ShowAutoStyles->False,
+            AutoSpacing->False],
+           $CellContext`Jb[],
+           Editable->False], "]"}],
+         ShowAutoStyles->False,
+         AutoSpacing->False],
+        $CellContext`PDy[
+         $CellContext`Jb[]],
+        Editable->False]}], 
+      RowBox[{"8", " ", 
+       SqrtBox["2"], " ", 
+       InterpretationBox[
+        StyleBox["K",
+         ShowAutoStyles->False,
+         AutoSpacing->False],
+        K[],
+        Editable->False], " ", 
+       RowBox[{"(", 
+        RowBox[{"1", "+", 
+         InterpretationBox[
+          StyleBox["K",
+           ShowAutoStyles->False,
+           AutoSpacing->False],
+          K[],
+          Editable->False]}], ")"}]}]]}], ")"}]}], 
+  InterpretationBox[
+   StyleBox["R",
+    ShowAutoStyles->False,
+    AutoSpacing->False],
+   $CellContext`R[],
+   Editable->False]]], "Output",
+ CellLabel->"Out[718]=",ExpressionUUID->"f3e60d23-0e4f-46a3-ae65-878cd4c67f93"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"NPsManual", "=", 
+  RowBox[{
+   FractionBox[
+    SuperscriptBox[
+     RowBox[{"OneMinusY", "[", "]"}], "2"], 
+    RowBox[{"8", 
+     SqrtBox["2"], 
+     RowBox[{"R", "[", "]"}], 
+     RowBox[{"K", "[", "]"}]}]], 
+   RowBox[{"(", 
+    RowBox[{
+     FractionBox[
+      RowBox[{
+       SuperscriptBox[
+        RowBox[{"J", "[", "]"}], "2"], 
+       RowBox[{"PDy", "[", 
+        RowBox[{"Jb", "[", "]"}], "]"}]}], 
+      RowBox[{"OnePlusK", "[", "]"}]], "-", 
+     RowBox[{
+      RowBox[{"OnePlusK", "[", "]"}], 
+      RowBox[{"PDy", "[", 
+       RowBox[{"J", "[", "]"}], "]"}]}]}], ")"}]}]}]], "Input",
+ CellLabel->
+  "In[720]:=",ExpressionUUID->"649b0421-af40-415e-a054-64770acf3384"],
+
+Cell[BoxData[
+ FractionBox[
+  RowBox[{
+   SuperscriptBox[
+    InterpretationBox[
+     StyleBox[
+      RowBox[{"(", 
+       RowBox[{"1", "-", "y"}], ")"}],
+      ShowAutoStyles->False,
+      AutoSpacing->False],
+     $CellContext`OneMinusY[],
+     Editable->False], "2"], " ", 
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"-", 
+       InterpretationBox[
+        StyleBox[
+         RowBox[{"(", 
+          RowBox[{"1", "+", "K"}], ")"}],
+         ShowAutoStyles->False,
+         AutoSpacing->False],
+        $CellContext`OnePlusK[],
+        Editable->False]}], " ", 
+      InterpretationBox[
+       StyleBox[
+        RowBox[{
+         SubscriptBox["\[PartialD]", "y"], "[", 
+         InterpretationBox[
+          StyleBox["J",
+           ShowAutoStyles->False,
+           AutoSpacing->False],
+          $CellContext`J[],
+          Editable->False], "]"}],
+        ShowAutoStyles->False,
+        AutoSpacing->False],
+       $CellContext`PDy[
+        $CellContext`J[]],
+       Editable->False]}], "+", 
+     FractionBox[
+      RowBox[{
+       SuperscriptBox[
+        InterpretationBox[
+         StyleBox["J",
+          ShowAutoStyles->False,
+          AutoSpacing->False],
+         $CellContext`J[],
+         Editable->False], "2"], " ", 
+       InterpretationBox[
+        StyleBox[
+         RowBox[{
+          SubscriptBox["\[PartialD]", "y"], "[", 
+          InterpretationBox[
+           StyleBox[
+            OverscriptBox["J", "_"],
+            ShowAutoStyles->False,
+            AutoSpacing->False],
+           $CellContext`Jb[],
+           Editable->False], "]"}],
+         ShowAutoStyles->False,
+         AutoSpacing->False],
+        $CellContext`PDy[
+         $CellContext`Jb[]],
+        Editable->False]}], 
+      InterpretationBox[
+       StyleBox[
+        RowBox[{"(", 
+         RowBox[{"1", "+", "K"}], ")"}],
+        ShowAutoStyles->False,
+        AutoSpacing->False],
+       $CellContext`OnePlusK[],
+       Editable->False]]}], ")"}]}], 
+  RowBox[{"8", " ", 
+   SqrtBox["2"], " ", 
+   InterpretationBox[
+    StyleBox["K",
+     ShowAutoStyles->False,
+     AutoSpacing->False],
+    K[],
+    Editable->False], " ", 
+   InterpretationBox[
+    StyleBox["R",
+     ShowAutoStyles->False,
+     AutoSpacing->False],
+    $CellContext`R[],
+    Editable->False]}]]], "Output",
+ CellLabel->"Out[720]=",ExpressionUUID->"f2e046a9-bd23-4d4e-bdae-abcf497f5d68"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"(", 
+    RowBox[{"NPsAuto", "==", "NPsManual"}], ")"}], "/.", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"OnePlusK", "[", "]"}], "->", 
+     RowBox[{"1", "+", 
+      RowBox[{"K", "[", "]"}]}]}], "}"}]}], "//", "Simplify"}]], "Input",
+ CellLabel->
+  "In[723]:=",ExpressionUUID->"57c9cc8c-657b-4992-a26a-4517ea2596a1"],
+
+Cell[BoxData["True"], "Output",
+ CellLabel->"Out[723]=",ExpressionUUID->"9ed7a6b0-6f8d-43ec-93f0-644087e981f1"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"NPrAuto", "=", 
+  RowBox[{"Collect", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{
+         RowBox[{
+          RowBox[{
+           RowBox[{
+            RowBox[{"NPr", "[", "]"}], "/.", "SubNPScalars"}], "/.", 
+           "PDuJtoH"}], "/.", "VtoW"}], "//.", "ScalarPDToNumericalCoords"}], 
+        "//.", "ScalarDerivLeibniz"}], ")"}], "/.", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"y", "[", "]"}], "->", 
+        RowBox[{"1", "-", 
+         RowBox[{"OneMinusY", "[", "]"}]}]}], "}"}]}], "//", "Simplify"}], 
+    ",", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"R", "[", "]"}], ",", 
+      RowBox[{"OneMinusY", "[", "]"}]}], "}"}]}], "]"}]}]], "Input",
+ CellLabel->
+  "In[725]:=",ExpressionUUID->"23bf935e-ef22-4587-bb55-8bb75ee00218"],
+
+Cell[BoxData[
+ RowBox[{"-", 
+  FractionBox[
+   InterpretationBox[
+    StyleBox[
+     RowBox[{"(", 
+      RowBox[{"1", "-", "y"}], ")"}],
+     ShowAutoStyles->False,
+     AutoSpacing->False],
+    $CellContext`OneMinusY[],
+    Editable->False], 
+   RowBox[{"2", " ", 
+    SqrtBox["2"], " ", 
+    InterpretationBox[
+     StyleBox["R",
+      ShowAutoStyles->False,
+      AutoSpacing->False],
+     $CellContext`R[],
+     Editable->False]}]]}]], "Output",
+ CellLabel->"Out[725]=",ExpressionUUID->"45cdb087-e1b0-4b44-ad7c-02fc29bf51f4"]
 }, Open  ]],
 
 Cell["CONTINUE HERE", \

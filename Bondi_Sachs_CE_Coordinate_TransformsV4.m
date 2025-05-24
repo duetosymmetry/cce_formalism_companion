@@ -2145,7 +2145,7 @@
 (*Characteristic equations in numerical coordinates*)
 
 
-(* ::Subsubsection:: *)
+(* ::Subsubsection::Closed:: *)
 (*Definitions for numerical coordinates*)
 
 
@@ -2543,7 +2543,7 @@
 (*CompareEquations[SWEvolutionNumeric//.SubSuplimentaryScalars/.{PDnu[J[]]:>H[],PDnu[Jb[]]:>Hb[]}/.VtoW//.ScalarPDToNumericalCoords,SWEvolutionNumericCondensed//.SubNumericSuplimentaryScalars]*)
 
 
-(* ::Subsubsection:: *)
+(* ::Subsubsection::Closed:: *)
 (*Newman-Penrose spin coefficients in Numerical coordinates*)
 
 
@@ -2608,15 +2608,43 @@
 
 
 (* ::Input:: *)
-(*-Jb[] PDy[J[]]+J[] PDy[Jb[]]//InputForm*)
-
-
-(* ::Input:: *)
 (*NPeManual=OneMinusY[]^2/(2Sqrt[2]R[]) (PDy[be[]]+(J[]PDy[Jb[]]-Jb[]PDy[J[]])/(8OnePlusK[]))*)
 
 
 (* ::Input:: *)
 (*NPeAuto==NPeManual//Simplify*)
+
+
+(* ::Input:: *)
+(*NPk[]/.SubNPScalars*)
+
+
+(* ::Input:: *)
+(*NPtAuto=Collect[(NPt[]/.SubNPScalars/.PDuJtoH/.VtoW//.ScalarPDToNumericalCoords//.ScalarDerivLeibniz)/.{y[]->1-OneMinusY[]}/.K[]->OnePlusK[]-1//Simplify,{R[],OneMinusY[],OnePlusK[],J[]}]*)
+
+
+(* ::Input:: *)
+(*NPtManual=OneMinusY[]/(8R[]) (Sqrt[OnePlusK[]](2Eth[be[]]-Qq[])+J[]/Sqrt[OnePlusK[]] (Qqb[]-2Ethbar[be[]]))*)
+
+
+(* ::Input:: *)
+(*NPtAuto==NPtManual//PowerExpand//Simplify*)
+
+
+(* ::Input:: *)
+(*NPsAuto=Collect[(NPs[]/.SubNPScalars/.PDuJtoH/.VtoW//.ScalarPDToNumericalCoords//.ScalarDerivLeibniz)/.{y[]->1-OneMinusY[]}/.{1+K[]->OnePlusK[]}//Simplify,{R[],OneMinusY[],J[]}]*)
+
+
+(* ::Input:: *)
+(*NPsManual=OneMinusY[]^2/(8Sqrt[2]R[]K[]) ((J[]^2 PDy[Jb[]])/OnePlusK[]-OnePlusK[]PDy[J[]])*)
+
+
+(* ::Input:: *)
+(*(NPsAuto==NPsManual)/.{OnePlusK[]->1+K[]}//Simplify*)
+
+
+(* ::Input:: *)
+(*NPrAuto=Collect[(NPr[]/.SubNPScalars/.PDuJtoH/.VtoW//.ScalarPDToNumericalCoords//.ScalarDerivLeibniz)/.{y[]->1-OneMinusY[]}//Simplify,{R[],OneMinusY[]}]*)
 
 
 (* ::Text:: *)
