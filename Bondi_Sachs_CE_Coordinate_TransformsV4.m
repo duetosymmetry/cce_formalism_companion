@@ -2145,7 +2145,7 @@
 (*Characteristic equations in numerical coordinates*)
 
 
-(* ::Subsubsection::Closed:: *)
+(* ::Subsubsection:: *)
 (*Definitions for numerical coordinates*)
 
 
@@ -2159,6 +2159,10 @@
 
 (* ::Input:: *)
 (*DefTensor[OneMinusY[],{M4},PrintAs->"(1-y)"];*)
+
+
+(* ::Input:: *)
+(*Conj[OneMinusY[]]=OneMinusY[]*)
 
 
 (* ::Text:: *)
@@ -2539,7 +2543,7 @@
 (*CompareEquations[SWEvolutionNumeric//.SubSuplimentaryScalars/.{PDnu[J[]]:>H[],PDnu[Jb[]]:>Hb[]}/.VtoW//.ScalarPDToNumericalCoords,SWEvolutionNumericCondensed//.SubNumericSuplimentaryScalars]*)
 
 
-(* ::Subsubsection::Closed:: *)
+(* ::Subsubsection:: *)
 (*Newman-Penrose spin coefficients in Numerical coordinates*)
 
 
@@ -2553,6 +2557,70 @@
 (* ::Input:: *)
 (*Column[(#[]==Collect[((#[]/.SubNPScalars/.PDuJtoH/.VtoW//.ScalarPDToNumericalCoords//.ScalarDerivLeibniz//.qqdqTo\[CapitalTheta])/.{y[]->1-OneMinusY[]}//Expand//ScreenDollarIndices),{Exp[-2be[]],OneMinusY[],R[],1+K[]}])&/@NPScalars];*)
 (*%/.{\[CapitalTheta]->Zero,\[CapitalTheta]b->Zero}*)
+
+
+(* ::Subsubsection:: *)
+(*Manual simplification of Newman-Penrose spin coefficients in numerical coordinates*)
+
+
+(* ::Input:: *)
+(*QPlusTwoEthbe = Qq[]+2Eth[be[]]*)
+
+
+(* ::Input:: *)
+(*NPaAuto=Collect[((NPa[]/.SubNPScalars//.ScalarPDToNumericalCoords//.ScalarDerivLeibniz//.qqdqTo\[CapitalTheta])/.{y[]->1-OneMinusY[]}/.{1+K[]->OnePlusK[]}/.{\[CapitalTheta]->Zero,\[CapitalTheta]b->Zero}//Expand//ScreenDollarIndices),{OneMinusY[],R[],OnePlusK[],K[]},Simplify]*)
+
+
+(* ::Input:: *)
+(*NPaManual=OneMinusY[]/(32R[]) (1/Sqrt[OnePlusK[]] ((Jb[]^2 Eth[J[]])/(K[]OnePlusK[])+1/K[] (J[]Ethbar[Jb[]]+Jb[]Ethbar[J[]]-Eth[Jb[]])+(2Jb[]QPlusTwoEthbe-3Eth[Jb[]]))-2Sqrt[OnePlusK[]]Conj[QPlusTwoEthbe])*)
+
+
+(* ::Input:: *)
+(*NPaAuto==NPaManual//Simplify*)
+
+
+(* ::Input:: *)
+(*NPbAuto=Collect[((NPb[]/.SubNPScalars//.ScalarPDToNumericalCoords//.ScalarDerivLeibniz//.qqdqTo\[CapitalTheta])/.{y[]->1-OneMinusY[]}/.{1+K[]->OnePlusK[]}/.{\[CapitalTheta]->Zero,\[CapitalTheta]b->Zero}//Expand//ScreenDollarIndices),{OneMinusY[],R[],OnePlusK[],K[]},Simplify]*)
+
+
+(* ::Input:: *)
+(*NPbManual=OneMinusY[]/(32R[]) (1/Sqrt[OnePlusK[]] (-((J[]^2 Ethbar[Jb[]])/(K[]OnePlusK[]))+1/K[] (Ethbar[J[]]-J[]Eth[Jb[]]-Jb[]Eth[J[]])+(2J[]Conj[QPlusTwoEthbe]+3Ethbar[J[]]))-2Sqrt[OnePlusK[]](QPlusTwoEthbe))*)
+
+
+(* ::Input:: *)
+(*NPbAuto==NPbManual//Simplify*)
+
+
+(* ::Input:: *)
+(*NPgAuto=Collect[(NPg[]/.SubNPScalars/.PDuJtoH/.VtoW//.ScalarPDToNumericalCoords//.ScalarDerivLeibniz//.qqdqTo\[CapitalTheta])/.{y[]->1-OneMinusY[]}/.{\[CapitalTheta]->Zero,\[CapitalTheta]b->Zero}//Expand,{OneMinusY[]}]*)
+
+
+(* ::Input:: *)
+(*NPgManual=1/(4Sqrt[2]) Exp[-2be[]](1/(2OnePlusK[]) ((OneMinusY[]^2 (Jb[]PDy[J[]]-J[]PDy[Jb[]]))/(2R[])+(2Hb[]J[]-2H[]Jb[]+Uq[]J[]Ethbar[Jb[]]-Uq[]Jb[]Ethbar[J[]]+Uqb[]J[]Eth[Jb[]]-Uqb[]Jb[]Eth[J[]]))+OneMinusY[]((W[](Jb[]*PDy[J[]]-J[]*PDy[Jb[]]))/(2OnePlusK[])+2PDy[W[]])+(2W[]+Ethbar[Uqb[]]J[]-Eth[Uq[]]Jb[]-Eth[Uqb[]]K[]+Ethbar[Uq[]]K[]))*)
+
+
+(* ::Input:: *)
+(*NPgAuto==NPgManual/.OnePlusK[]->1+K[]//Simplify*)
+
+
+(* ::Input:: *)
+(*NPeAuto=Collect[(NPe[]/.SubNPScalars/.PDuJtoH/.VtoW//.ScalarPDToNumericalCoords//.ScalarDerivLeibniz)/.{y[]->1-OneMinusY[]}/.K[]->OnePlusK[]-1//Simplify,{R[],OneMinusY[],OnePlusK[]}]*)
+
+
+(* ::Input:: *)
+(*-Jb[] PDy[J[]]+J[] PDy[Jb[]]//InputForm*)
+
+
+(* ::Input:: *)
+(*NPeManual=OneMinusY[]^2/(2Sqrt[2]R[]) (PDy[be[]]+(J[]PDy[Jb[]]-Jb[]PDy[J[]])/(8OnePlusK[]))*)
+
+
+(* ::Input:: *)
+(*NPeAuto==NPeManual//Simplify*)
+
+
+(* ::Text:: *)
+(*CONTINUE HERE*)
 
 
 (* ::Subsubsection::Closed:: *)

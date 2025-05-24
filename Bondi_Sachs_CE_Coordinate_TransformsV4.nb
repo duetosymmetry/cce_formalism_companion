@@ -87195,6 +87195,28 @@ Cell[BoxData[
  CellLabel->
   "In[413]:=",ExpressionUUID->"7bb93136-75b9-413e-ac6d-b83b7fd3e0df"],
 
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Conj", "[", 
+   RowBox[{"OneMinusY", "[", "]"}], "]"}], "=", 
+  RowBox[{"OneMinusY", "[", "]"}]}]], "Input",
+ CellLabel->
+  "In[569]:=",ExpressionUUID->"1750b717-b6db-4acd-9a63-f369ece10163"],
+
+Cell[BoxData[
+ InterpretationBox[
+  StyleBox[
+   RowBox[{"(", 
+    RowBox[{"1", "-", "y"}], ")"}],
+   ShowAutoStyles->False,
+   AutoSpacing->False],
+  $CellContext`OneMinusY[],
+  Editable->False]], "Output",
+ CellLabel->"Out[569]=",ExpressionUUID->"a97ed318-233c-4f89-b739-99c35e6a6689"]
+}, Open  ]],
+
 Cell["The Bondi radius of the worldtube", \
 "Text",ExpressionUUID->"cbcdd1ee-2c21-454d-8adf-bcb1c07514ec"],
 
@@ -87307,7 +87329,7 @@ Cell[BoxData[
     "PDr", ",", "PDu", ",", "Eth", ",", "Ethbar", ",", "PDy", ",", "PDnu", 
      ",", "nEth", ",", "nEthbar"}], "}"}]}], ";"}]], "Input",
  CellLabel->"In[423]:=",ExpressionUUID->"5d6c7986-d104-4734-a1b0-90c8ae7388c3"]
-}, Closed]],
+}, Open  ]],
 
 Cell[CellGroupData[{
 
@@ -99616,7 +99638,2946 @@ Cell[BoxData[
   "Column"]], "Output",
  CellLabel->"Out[511]=",ExpressionUUID->"38346def-849c-462f-bc8f-3da25eee7114"]
 }, Open  ]]
-}, Closed]],
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+Manual simplification of Newman-Penrose spin coefficients in numerical \
+coordinates\
+\>", "Subsubsection",ExpressionUUID->"1057afd8-4355-423b-ae48-ca6b8f7e7961"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"QPlusTwoEthbe", " ", "=", " ", 
+  RowBox[{
+   RowBox[{"Qq", "[", "]"}], "+", 
+   RowBox[{"2", 
+    RowBox[{"Eth", "[", 
+     RowBox[{"be", "[", "]"}], "]"}]}]}]}]], "Input",
+ CellLabel->
+  "In[539]:=",ExpressionUUID->"e2bfa25c-6780-4773-a602-d12b0290259c"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"2", " ", 
+   InterpretationBox[
+    StyleBox[
+     RowBox[{"\[PartialD]", "[", 
+      InterpretationBox[
+       StyleBox["\[Beta]",
+        ShowAutoStyles->False,
+        AutoSpacing->False],
+       $CellContext`be[],
+       Editable->False], "]"}],
+     ShowAutoStyles->False,
+     AutoSpacing->False],
+    $CellContext`Eth[
+     $CellContext`be[]],
+    Editable->False]}], "+", 
+  InterpretationBox[
+   StyleBox[
+    SubscriptBox["Q", "q"],
+    ShowAutoStyles->False,
+    AutoSpacing->False],
+   $CellContext`Qq[],
+   Editable->False]}]], "Output",
+ CellLabel->"Out[539]=",ExpressionUUID->"26c7c3e6-7647-4672-90de-f0c522e2a764"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"NPaAuto", "=", 
+  RowBox[{"Collect", "[", 
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{
+       RowBox[{
+        RowBox[{
+         RowBox[{
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{
+             RowBox[{
+              RowBox[{
+               RowBox[{"NPa", "[", "]"}], "/.", "SubNPScalars"}], "//.", 
+              "ScalarPDToNumericalCoords"}], "//.", "ScalarDerivLeibniz"}], "//.",
+             "qqdqTo\[CapitalTheta]"}], ")"}], "/.", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"y", "[", "]"}], "->", 
+            RowBox[{"1", "-", 
+             RowBox[{"OneMinusY", "[", "]"}]}]}], "}"}]}], "/.", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"1", "+", 
+            RowBox[{"K", "[", "]"}]}], "->", 
+           RowBox[{"OnePlusK", "[", "]"}]}], "}"}]}], "/.", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"\[CapitalTheta]", "->", "Zero"}], ",", 
+          RowBox[{"\[CapitalTheta]b", "->", "Zero"}]}], "}"}]}], "//", 
+       "Expand"}], "//", "ScreenDollarIndices"}], ")"}], ",", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"OneMinusY", "[", "]"}], ",", 
+      RowBox[{"R", "[", "]"}], ",", 
+      RowBox[{"OnePlusK", "[", "]"}], ",", 
+      RowBox[{"K", "[", "]"}]}], "}"}], ",", "Simplify"}], "]"}]}]], "Input",
+ CellLabel->
+  "In[540]:=",ExpressionUUID->"d5e3da9b-8941-404a-81fd-dcfa7f0cc4f3"],
+
+Cell[BoxData[
+ FractionBox[
+  RowBox[{
+   InterpretationBox[
+    StyleBox[
+     RowBox[{"(", 
+      RowBox[{"1", "-", "y"}], ")"}],
+     ShowAutoStyles->False,
+     AutoSpacing->False],
+    $CellContext`OneMinusY[],
+    Editable->False], " ", 
+   RowBox[{"(", 
+    RowBox[{
+     FractionBox[
+      RowBox[{
+       InterpretationBox[
+        StyleBox[
+         RowBox[{"\[PartialD]", "[", 
+          InterpretationBox[
+           StyleBox["J",
+            ShowAutoStyles->False,
+            AutoSpacing->False],
+           $CellContext`J[],
+           Editable->False], "]"}],
+         ShowAutoStyles->False,
+         AutoSpacing->False],
+        $CellContext`Eth[
+         $CellContext`J[]],
+        Editable->False], " ", 
+       SuperscriptBox[
+        InterpretationBox[
+         StyleBox[
+          OverscriptBox["J", "_"],
+          ShowAutoStyles->False,
+          AutoSpacing->False],
+         $CellContext`Jb[],
+         Editable->False], "2"]}], 
+      RowBox[{"32", " ", 
+       InterpretationBox[
+        StyleBox["K",
+         ShowAutoStyles->False,
+         AutoSpacing->False],
+        K[],
+        Editable->False], " ", 
+       SuperscriptBox[
+        InterpretationBox[
+         StyleBox[
+          RowBox[{"(", 
+           RowBox[{"1", "+", "K"}], ")"}],
+          ShowAutoStyles->False,
+          AutoSpacing->False],
+         $CellContext`OnePlusK[],
+         Editable->False], 
+        RowBox[{"3", "/", "2"}]]}]], "+", 
+     FractionBox[
+      RowBox[{
+       FractionBox[
+        RowBox[{
+         RowBox[{"-", 
+          InterpretationBox[
+           StyleBox[
+            RowBox[{"\[PartialD]", "[", 
+             InterpretationBox[
+              StyleBox[
+               OverscriptBox["J", "_"],
+               ShowAutoStyles->False,
+               AutoSpacing->False],
+              $CellContext`Jb[],
+              Editable->False], "]"}],
+            ShowAutoStyles->False,
+            AutoSpacing->False],
+           $CellContext`Eth[
+            $CellContext`Jb[]],
+           Editable->False]}], "+", 
+         RowBox[{
+          InterpretationBox[
+           StyleBox[
+            RowBox[{
+             OverscriptBox["\[PartialD]", "_"], "[", 
+             InterpretationBox[
+              StyleBox[
+               OverscriptBox["J", "_"],
+               ShowAutoStyles->False,
+               AutoSpacing->False],
+              $CellContext`Jb[],
+              Editable->False], "]"}],
+            ShowAutoStyles->False,
+            AutoSpacing->False],
+           $CellContext`Ethbar[
+            $CellContext`Jb[]],
+           Editable->False], " ", 
+          InterpretationBox[
+           StyleBox["J",
+            ShowAutoStyles->False,
+            AutoSpacing->False],
+           $CellContext`J[],
+           Editable->False]}], "+", 
+         RowBox[{
+          InterpretationBox[
+           StyleBox[
+            RowBox[{
+             OverscriptBox["\[PartialD]", "_"], "[", 
+             InterpretationBox[
+              StyleBox["J",
+               ShowAutoStyles->False,
+               AutoSpacing->False],
+              $CellContext`J[],
+              Editable->False], "]"}],
+            ShowAutoStyles->False,
+            AutoSpacing->False],
+           $CellContext`Ethbar[
+            $CellContext`J[]],
+           Editable->False], " ", 
+          InterpretationBox[
+           StyleBox[
+            OverscriptBox["J", "_"],
+            ShowAutoStyles->False,
+            AutoSpacing->False],
+           $CellContext`Jb[],
+           Editable->False]}]}], 
+        RowBox[{"32", " ", 
+         InterpretationBox[
+          StyleBox["K",
+           ShowAutoStyles->False,
+           AutoSpacing->False],
+          K[],
+          Editable->False]}]], "+", 
+       RowBox[{
+        FractionBox["1", "32"], " ", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"-", "3"}], " ", 
+           InterpretationBox[
+            StyleBox[
+             RowBox[{"\[PartialD]", "[", 
+              InterpretationBox[
+               StyleBox[
+                OverscriptBox["J", "_"],
+                ShowAutoStyles->False,
+                AutoSpacing->False],
+               $CellContext`Jb[],
+               Editable->False], "]"}],
+             ShowAutoStyles->False,
+             AutoSpacing->False],
+            $CellContext`Eth[
+             $CellContext`Jb[]],
+            Editable->False]}], "+", 
+          RowBox[{"2", " ", 
+           InterpretationBox[
+            StyleBox[
+             OverscriptBox["J", "_"],
+             ShowAutoStyles->False,
+             AutoSpacing->False],
+            $CellContext`Jb[],
+            Editable->False], " ", 
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{"2", " ", 
+              InterpretationBox[
+               StyleBox[
+                RowBox[{"\[PartialD]", "[", 
+                 InterpretationBox[
+                  StyleBox["\[Beta]",
+                   ShowAutoStyles->False,
+                   AutoSpacing->False],
+                  $CellContext`be[],
+                  Editable->False], "]"}],
+                ShowAutoStyles->False,
+                AutoSpacing->False],
+               $CellContext`Eth[
+                $CellContext`be[]],
+               Editable->False]}], "+", 
+             InterpretationBox[
+              StyleBox[
+               SubscriptBox["Q", "q"],
+               ShowAutoStyles->False,
+               AutoSpacing->False],
+              $CellContext`Qq[],
+              Editable->False]}], ")"}]}]}], ")"}]}]}], 
+      SqrtBox[
+       InterpretationBox[
+        StyleBox[
+         RowBox[{"(", 
+          RowBox[{"1", "+", "K"}], ")"}],
+         ShowAutoStyles->False,
+         AutoSpacing->False],
+        $CellContext`OnePlusK[],
+        Editable->False]]], "+", 
+     RowBox[{
+      FractionBox["1", "16"], " ", 
+      SqrtBox[
+       InterpretationBox[
+        StyleBox[
+         RowBox[{"(", 
+          RowBox[{"1", "+", "K"}], ")"}],
+         ShowAutoStyles->False,
+         AutoSpacing->False],
+        $CellContext`OnePlusK[],
+        Editable->False]], " ", 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"-", "2"}], " ", 
+         InterpretationBox[
+          StyleBox[
+           RowBox[{
+            OverscriptBox["\[PartialD]", "_"], "[", 
+            InterpretationBox[
+             StyleBox["\[Beta]",
+              ShowAutoStyles->False,
+              AutoSpacing->False],
+             $CellContext`be[],
+             Editable->False], "]"}],
+           ShowAutoStyles->False,
+           AutoSpacing->False],
+          $CellContext`Ethbar[
+           $CellContext`be[]],
+          Editable->False]}], "-", 
+        InterpretationBox[
+         StyleBox[
+          SubscriptBox["Q", 
+           OverscriptBox["q", "_"]],
+          ShowAutoStyles->False,
+          AutoSpacing->False],
+         $CellContext`Qqb[],
+         Editable->False]}], ")"}]}]}], ")"}]}], 
+  InterpretationBox[
+   StyleBox["R",
+    ShowAutoStyles->False,
+    AutoSpacing->False],
+   $CellContext`R[],
+   Editable->False]]], "Output",
+ CellLabel->"Out[540]=",ExpressionUUID->"78a39f57-f4cc-4b50-ac7a-337229a82807"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"NPaManual", "=", 
+  RowBox[{
+   FractionBox[
+    RowBox[{"OneMinusY", "[", "]"}], 
+    RowBox[{"32", 
+     RowBox[{"R", "[", "]"}]}]], 
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{
+      FractionBox["1", 
+       SqrtBox[
+        RowBox[{"OnePlusK", "[", "]"}]]], 
+      RowBox[{"(", 
+       RowBox[{
+        FractionBox[
+         RowBox[{
+          SuperscriptBox[
+           RowBox[{"Jb", "[", "]"}], "2"], 
+          RowBox[{"Eth", "[", 
+           RowBox[{"J", "[", "]"}], "]"}]}], 
+         RowBox[{
+          RowBox[{"K", "[", "]"}], 
+          RowBox[{"OnePlusK", "[", "]"}]}]], "+", 
+        RowBox[{
+         FractionBox["1", 
+          RowBox[{"K", "[", "]"}]], 
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"J", "[", "]"}], 
+            RowBox[{"Ethbar", "[", 
+             RowBox[{"Jb", "[", "]"}], "]"}]}], "+", 
+           RowBox[{
+            RowBox[{"Jb", "[", "]"}], 
+            RowBox[{"Ethbar", "[", 
+             RowBox[{"J", "[", "]"}], "]"}]}], "-", 
+           RowBox[{"Eth", "[", 
+            RowBox[{"Jb", "[", "]"}], "]"}]}], ")"}]}], "+", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"2", 
+           RowBox[{"Jb", "[", "]"}], "QPlusTwoEthbe"}], "-", 
+          RowBox[{"3", 
+           RowBox[{"Eth", "[", 
+            RowBox[{"Jb", "[", "]"}], "]"}]}]}], ")"}]}], ")"}]}], "-", 
+     RowBox[{"2", 
+      SqrtBox[
+       RowBox[{"OnePlusK", "[", "]"}]], 
+      RowBox[{"Conj", "[", "QPlusTwoEthbe", "]"}]}]}], ")"}]}]}]], "Input",
+ CellLabel->
+  "In[585]:=",ExpressionUUID->"6af105eb-fd94-40cd-a160-521309b90dff"],
+
+Cell[BoxData[
+ FractionBox[
+  RowBox[{
+   InterpretationBox[
+    StyleBox[
+     RowBox[{"(", 
+      RowBox[{"1", "-", "y"}], ")"}],
+     ShowAutoStyles->False,
+     AutoSpacing->False],
+    $CellContext`OneMinusY[],
+    Editable->False], " ", 
+   RowBox[{"(", 
+    RowBox[{
+     FractionBox[
+      RowBox[{
+       RowBox[{
+        RowBox[{"-", "3"}], " ", 
+        InterpretationBox[
+         StyleBox[
+          RowBox[{"\[PartialD]", "[", 
+           InterpretationBox[
+            StyleBox[
+             OverscriptBox["J", "_"],
+             ShowAutoStyles->False,
+             AutoSpacing->False],
+            $CellContext`Jb[],
+            Editable->False], "]"}],
+          ShowAutoStyles->False,
+          AutoSpacing->False],
+         $CellContext`Eth[
+          $CellContext`Jb[]],
+         Editable->False]}], "+", 
+       FractionBox[
+        RowBox[{
+         RowBox[{"-", 
+          InterpretationBox[
+           StyleBox[
+            RowBox[{"\[PartialD]", "[", 
+             InterpretationBox[
+              StyleBox[
+               OverscriptBox["J", "_"],
+               ShowAutoStyles->False,
+               AutoSpacing->False],
+              $CellContext`Jb[],
+              Editable->False], "]"}],
+            ShowAutoStyles->False,
+            AutoSpacing->False],
+           $CellContext`Eth[
+            $CellContext`Jb[]],
+           Editable->False]}], "+", 
+         RowBox[{
+          InterpretationBox[
+           StyleBox[
+            RowBox[{
+             OverscriptBox["\[PartialD]", "_"], "[", 
+             InterpretationBox[
+              StyleBox[
+               OverscriptBox["J", "_"],
+               ShowAutoStyles->False,
+               AutoSpacing->False],
+              $CellContext`Jb[],
+              Editable->False], "]"}],
+            ShowAutoStyles->False,
+            AutoSpacing->False],
+           $CellContext`Ethbar[
+            $CellContext`Jb[]],
+           Editable->False], " ", 
+          InterpretationBox[
+           StyleBox["J",
+            ShowAutoStyles->False,
+            AutoSpacing->False],
+           $CellContext`J[],
+           Editable->False]}], "+", 
+         RowBox[{
+          InterpretationBox[
+           StyleBox[
+            RowBox[{
+             OverscriptBox["\[PartialD]", "_"], "[", 
+             InterpretationBox[
+              StyleBox["J",
+               ShowAutoStyles->False,
+               AutoSpacing->False],
+              $CellContext`J[],
+              Editable->False], "]"}],
+            ShowAutoStyles->False,
+            AutoSpacing->False],
+           $CellContext`Ethbar[
+            $CellContext`J[]],
+           Editable->False], " ", 
+          InterpretationBox[
+           StyleBox[
+            OverscriptBox["J", "_"],
+            ShowAutoStyles->False,
+            AutoSpacing->False],
+           $CellContext`Jb[],
+           Editable->False]}]}], 
+        InterpretationBox[
+         StyleBox["K",
+          ShowAutoStyles->False,
+          AutoSpacing->False],
+         K[],
+         Editable->False]], "+", 
+       FractionBox[
+        RowBox[{
+         InterpretationBox[
+          StyleBox[
+           RowBox[{"\[PartialD]", "[", 
+            InterpretationBox[
+             StyleBox["J",
+              ShowAutoStyles->False,
+              AutoSpacing->False],
+             $CellContext`J[],
+             Editable->False], "]"}],
+           ShowAutoStyles->False,
+           AutoSpacing->False],
+          $CellContext`Eth[
+           $CellContext`J[]],
+          Editable->False], " ", 
+         SuperscriptBox[
+          InterpretationBox[
+           StyleBox[
+            OverscriptBox["J", "_"],
+            ShowAutoStyles->False,
+            AutoSpacing->False],
+           $CellContext`Jb[],
+           Editable->False], "2"]}], 
+        RowBox[{
+         InterpretationBox[
+          StyleBox["K",
+           ShowAutoStyles->False,
+           AutoSpacing->False],
+          K[],
+          Editable->False], " ", 
+         InterpretationBox[
+          StyleBox[
+           RowBox[{"(", 
+            RowBox[{"1", "+", "K"}], ")"}],
+           ShowAutoStyles->False,
+           AutoSpacing->False],
+          $CellContext`OnePlusK[],
+          Editable->False]}]], "+", 
+       RowBox[{"2", " ", 
+        InterpretationBox[
+         StyleBox[
+          OverscriptBox["J", "_"],
+          ShowAutoStyles->False,
+          AutoSpacing->False],
+         $CellContext`Jb[],
+         Editable->False], " ", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"2", " ", 
+           InterpretationBox[
+            StyleBox[
+             RowBox[{"\[PartialD]", "[", 
+              InterpretationBox[
+               StyleBox["\[Beta]",
+                ShowAutoStyles->False,
+                AutoSpacing->False],
+               $CellContext`be[],
+               Editable->False], "]"}],
+             ShowAutoStyles->False,
+             AutoSpacing->False],
+            $CellContext`Eth[
+             $CellContext`be[]],
+            Editable->False]}], "+", 
+          InterpretationBox[
+           StyleBox[
+            SubscriptBox["Q", "q"],
+            ShowAutoStyles->False,
+            AutoSpacing->False],
+           $CellContext`Qq[],
+           Editable->False]}], ")"}]}]}], 
+      SqrtBox[
+       InterpretationBox[
+        StyleBox[
+         RowBox[{"(", 
+          RowBox[{"1", "+", "K"}], ")"}],
+         ShowAutoStyles->False,
+         AutoSpacing->False],
+        $CellContext`OnePlusK[],
+        Editable->False]]], "-", 
+     RowBox[{"2", " ", 
+      SqrtBox[
+       InterpretationBox[
+        StyleBox[
+         RowBox[{"(", 
+          RowBox[{"1", "+", "K"}], ")"}],
+         ShowAutoStyles->False,
+         AutoSpacing->False],
+        $CellContext`OnePlusK[],
+        Editable->False]], " ", 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"2", " ", 
+         InterpretationBox[
+          StyleBox[
+           RowBox[{
+            OverscriptBox["\[PartialD]", "_"], "[", 
+            InterpretationBox[
+             StyleBox["\[Beta]",
+              ShowAutoStyles->False,
+              AutoSpacing->False],
+             $CellContext`be[],
+             Editable->False], "]"}],
+           ShowAutoStyles->False,
+           AutoSpacing->False],
+          $CellContext`Ethbar[
+           $CellContext`be[]],
+          Editable->False]}], "+", 
+        InterpretationBox[
+         StyleBox[
+          SubscriptBox["Q", 
+           OverscriptBox["q", "_"]],
+          ShowAutoStyles->False,
+          AutoSpacing->False],
+         $CellContext`Qqb[],
+         Editable->False]}], ")"}]}]}], ")"}]}], 
+  RowBox[{"32", " ", 
+   InterpretationBox[
+    StyleBox["R",
+     ShowAutoStyles->False,
+     AutoSpacing->False],
+    $CellContext`R[],
+    Editable->False]}]]], "Output",
+ CellLabel->"Out[585]=",ExpressionUUID->"3b82e698-d63d-4b19-ba60-e3b7a17f57a4"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"NPaAuto", "==", "NPaManual"}], "//", "Simplify"}]], "Input",
+ CellLabel->
+  "In[561]:=",ExpressionUUID->"f6c08ad6-66f7-4af8-bcf0-b2b0415fdcc1"],
+
+Cell[BoxData["True"], "Output",
+ CellLabel->"Out[561]=",ExpressionUUID->"0db1ce77-b752-460a-9346-a33fb0dcc614"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"NPbAuto", "=", 
+  RowBox[{"Collect", "[", 
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{
+       RowBox[{
+        RowBox[{
+         RowBox[{
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{
+             RowBox[{
+              RowBox[{
+               RowBox[{"NPb", "[", "]"}], "/.", "SubNPScalars"}], "//.", 
+              "ScalarPDToNumericalCoords"}], "//.", "ScalarDerivLeibniz"}], "//.",
+             "qqdqTo\[CapitalTheta]"}], ")"}], "/.", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"y", "[", "]"}], "->", 
+            RowBox[{"1", "-", 
+             RowBox[{"OneMinusY", "[", "]"}]}]}], "}"}]}], "/.", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"1", "+", 
+            RowBox[{"K", "[", "]"}]}], "->", 
+           RowBox[{"OnePlusK", "[", "]"}]}], "}"}]}], "/.", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"\[CapitalTheta]", "->", "Zero"}], ",", 
+          RowBox[{"\[CapitalTheta]b", "->", "Zero"}]}], "}"}]}], "//", 
+       "Expand"}], "//", "ScreenDollarIndices"}], ")"}], ",", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"OneMinusY", "[", "]"}], ",", 
+      RowBox[{"R", "[", "]"}], ",", 
+      RowBox[{"OnePlusK", "[", "]"}], ",", 
+      RowBox[{"K", "[", "]"}]}], "}"}], ",", "Simplify"}], "]"}]}]], "Input",
+ CellLabel->
+  "In[562]:=",ExpressionUUID->"4e2191a6-8033-4cbf-ae27-36e65462a2a9"],
+
+Cell[BoxData[
+ FractionBox[
+  RowBox[{
+   InterpretationBox[
+    StyleBox[
+     RowBox[{"(", 
+      RowBox[{"1", "-", "y"}], ")"}],
+     ShowAutoStyles->False,
+     AutoSpacing->False],
+    $CellContext`OneMinusY[],
+    Editable->False], " ", 
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{"-", 
+      FractionBox[
+       RowBox[{
+        InterpretationBox[
+         StyleBox[
+          RowBox[{
+           OverscriptBox["\[PartialD]", "_"], "[", 
+           InterpretationBox[
+            StyleBox[
+             OverscriptBox["J", "_"],
+             ShowAutoStyles->False,
+             AutoSpacing->False],
+            $CellContext`Jb[],
+            Editable->False], "]"}],
+          ShowAutoStyles->False,
+          AutoSpacing->False],
+         $CellContext`Ethbar[
+          $CellContext`Jb[]],
+         Editable->False], " ", 
+        SuperscriptBox[
+         InterpretationBox[
+          StyleBox["J",
+           ShowAutoStyles->False,
+           AutoSpacing->False],
+          $CellContext`J[],
+          Editable->False], "2"]}], 
+       RowBox[{"32", " ", 
+        InterpretationBox[
+         StyleBox["K",
+          ShowAutoStyles->False,
+          AutoSpacing->False],
+         K[],
+         Editable->False], " ", 
+        SuperscriptBox[
+         InterpretationBox[
+          StyleBox[
+           RowBox[{"(", 
+            RowBox[{"1", "+", "K"}], ")"}],
+           ShowAutoStyles->False,
+           AutoSpacing->False],
+          $CellContext`OnePlusK[],
+          Editable->False], 
+         RowBox[{"3", "/", "2"}]]}]]}], "+", 
+     RowBox[{
+      FractionBox["1", "16"], " ", 
+      SqrtBox[
+       InterpretationBox[
+        StyleBox[
+         RowBox[{"(", 
+          RowBox[{"1", "+", "K"}], ")"}],
+         ShowAutoStyles->False,
+         AutoSpacing->False],
+        $CellContext`OnePlusK[],
+        Editable->False]], " ", 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"-", "2"}], " ", 
+         InterpretationBox[
+          StyleBox[
+           RowBox[{"\[PartialD]", "[", 
+            InterpretationBox[
+             StyleBox["\[Beta]",
+              ShowAutoStyles->False,
+              AutoSpacing->False],
+             $CellContext`be[],
+             Editable->False], "]"}],
+           ShowAutoStyles->False,
+           AutoSpacing->False],
+          $CellContext`Eth[
+           $CellContext`be[]],
+          Editable->False]}], "-", 
+        InterpretationBox[
+         StyleBox[
+          SubscriptBox["Q", "q"],
+          ShowAutoStyles->False,
+          AutoSpacing->False],
+         $CellContext`Qq[],
+         Editable->False]}], ")"}]}], "+", 
+     FractionBox[
+      RowBox[{
+       FractionBox[
+        RowBox[{
+         InterpretationBox[
+          StyleBox[
+           RowBox[{
+            OverscriptBox["\[PartialD]", "_"], "[", 
+            InterpretationBox[
+             StyleBox["J",
+              ShowAutoStyles->False,
+              AutoSpacing->False],
+             $CellContext`J[],
+             Editable->False], "]"}],
+           ShowAutoStyles->False,
+           AutoSpacing->False],
+          $CellContext`Ethbar[
+           $CellContext`J[]],
+          Editable->False], "-", 
+         RowBox[{
+          InterpretationBox[
+           StyleBox[
+            RowBox[{"\[PartialD]", "[", 
+             InterpretationBox[
+              StyleBox[
+               OverscriptBox["J", "_"],
+               ShowAutoStyles->False,
+               AutoSpacing->False],
+              $CellContext`Jb[],
+              Editable->False], "]"}],
+            ShowAutoStyles->False,
+            AutoSpacing->False],
+           $CellContext`Eth[
+            $CellContext`Jb[]],
+           Editable->False], " ", 
+          InterpretationBox[
+           StyleBox["J",
+            ShowAutoStyles->False,
+            AutoSpacing->False],
+           $CellContext`J[],
+           Editable->False]}], "-", 
+         RowBox[{
+          InterpretationBox[
+           StyleBox[
+            RowBox[{"\[PartialD]", "[", 
+             InterpretationBox[
+              StyleBox["J",
+               ShowAutoStyles->False,
+               AutoSpacing->False],
+              $CellContext`J[],
+              Editable->False], "]"}],
+            ShowAutoStyles->False,
+            AutoSpacing->False],
+           $CellContext`Eth[
+            $CellContext`J[]],
+           Editable->False], " ", 
+          InterpretationBox[
+           StyleBox[
+            OverscriptBox["J", "_"],
+            ShowAutoStyles->False,
+            AutoSpacing->False],
+           $CellContext`Jb[],
+           Editable->False]}]}], 
+        RowBox[{"32", " ", 
+         InterpretationBox[
+          StyleBox["K",
+           ShowAutoStyles->False,
+           AutoSpacing->False],
+          K[],
+          Editable->False]}]], "+", 
+       RowBox[{
+        FractionBox["1", "32"], " ", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"3", " ", 
+           InterpretationBox[
+            StyleBox[
+             RowBox[{
+              OverscriptBox["\[PartialD]", "_"], "[", 
+              InterpretationBox[
+               StyleBox["J",
+                ShowAutoStyles->False,
+                AutoSpacing->False],
+               $CellContext`J[],
+               Editable->False], "]"}],
+             ShowAutoStyles->False,
+             AutoSpacing->False],
+            $CellContext`Ethbar[
+             $CellContext`J[]],
+            Editable->False]}], "+", 
+          RowBox[{"2", " ", 
+           InterpretationBox[
+            StyleBox["J",
+             ShowAutoStyles->False,
+             AutoSpacing->False],
+            $CellContext`J[],
+            Editable->False], " ", 
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{"2", " ", 
+              InterpretationBox[
+               StyleBox[
+                RowBox[{
+                 OverscriptBox["\[PartialD]", "_"], "[", 
+                 InterpretationBox[
+                  StyleBox["\[Beta]",
+                   ShowAutoStyles->False,
+                   AutoSpacing->False],
+                  $CellContext`be[],
+                  Editable->False], "]"}],
+                ShowAutoStyles->False,
+                AutoSpacing->False],
+               $CellContext`Ethbar[
+                $CellContext`be[]],
+               Editable->False]}], "+", 
+             InterpretationBox[
+              StyleBox[
+               SubscriptBox["Q", 
+                OverscriptBox["q", "_"]],
+               ShowAutoStyles->False,
+               AutoSpacing->False],
+              $CellContext`Qqb[],
+              Editable->False]}], ")"}]}]}], ")"}]}]}], 
+      SqrtBox[
+       InterpretationBox[
+        StyleBox[
+         RowBox[{"(", 
+          RowBox[{"1", "+", "K"}], ")"}],
+         ShowAutoStyles->False,
+         AutoSpacing->False],
+        $CellContext`OnePlusK[],
+        Editable->False]]]}], ")"}]}], 
+  InterpretationBox[
+   StyleBox["R",
+    ShowAutoStyles->False,
+    AutoSpacing->False],
+   $CellContext`R[],
+   Editable->False]]], "Output",
+ CellLabel->"Out[562]=",ExpressionUUID->"8e30ca7c-a6d8-4c78-b880-8a31aafa6005"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"NPbManual", "=", 
+  RowBox[{
+   FractionBox[
+    RowBox[{"OneMinusY", "[", "]"}], 
+    RowBox[{"32", 
+     RowBox[{"R", "[", "]"}]}]], 
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{
+      FractionBox["1", 
+       SqrtBox[
+        RowBox[{"OnePlusK", "[", "]"}]]], 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"-", 
+         FractionBox[
+          RowBox[{
+           SuperscriptBox[
+            RowBox[{"J", "[", "]"}], "2"], 
+           RowBox[{"Ethbar", "[", 
+            RowBox[{"Jb", "[", "]"}], "]"}]}], 
+          RowBox[{
+           RowBox[{"K", "[", "]"}], 
+           RowBox[{"OnePlusK", "[", "]"}]}]]}], "+", 
+        RowBox[{
+         FractionBox["1", 
+          RowBox[{"K", "[", "]"}]], 
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{"Ethbar", "[", 
+            RowBox[{"J", "[", "]"}], "]"}], "-", 
+           RowBox[{
+            RowBox[{"J", "[", "]"}], 
+            RowBox[{"Eth", "[", 
+             RowBox[{"Jb", "[", "]"}], "]"}]}], "-", 
+           RowBox[{
+            RowBox[{"Jb", "[", "]"}], 
+            RowBox[{"Eth", "[", 
+             RowBox[{"J", "[", "]"}], "]"}]}]}], ")"}]}], "+", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"2", 
+           RowBox[{"J", "[", "]"}], 
+           RowBox[{"Conj", "[", "QPlusTwoEthbe", "]"}]}], "+", 
+          RowBox[{"3", 
+           RowBox[{"Ethbar", "[", 
+            RowBox[{"J", "[", "]"}], "]"}]}]}], ")"}]}], ")"}]}], "-", 
+     RowBox[{"2", 
+      SqrtBox[
+       RowBox[{"OnePlusK", "[", "]"}]], 
+      RowBox[{"(", "QPlusTwoEthbe", ")"}]}]}], ")"}]}]}]], "Input",
+ CellLabel->
+  "In[564]:=",ExpressionUUID->"eabc00fc-332b-408a-a7d7-f700317881d7"],
+
+Cell[BoxData[
+ FractionBox[
+  RowBox[{
+   InterpretationBox[
+    StyleBox[
+     RowBox[{"(", 
+      RowBox[{"1", "-", "y"}], ")"}],
+     ShowAutoStyles->False,
+     AutoSpacing->False],
+    $CellContext`OneMinusY[],
+    Editable->False], " ", 
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"-", "2"}], " ", 
+      SqrtBox[
+       InterpretationBox[
+        StyleBox[
+         RowBox[{"(", 
+          RowBox[{"1", "+", "K"}], ")"}],
+         ShowAutoStyles->False,
+         AutoSpacing->False],
+        $CellContext`OnePlusK[],
+        Editable->False]], " ", 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"2", " ", 
+         InterpretationBox[
+          StyleBox[
+           RowBox[{"\[PartialD]", "[", 
+            InterpretationBox[
+             StyleBox["\[Beta]",
+              ShowAutoStyles->False,
+              AutoSpacing->False],
+             $CellContext`be[],
+             Editable->False], "]"}],
+           ShowAutoStyles->False,
+           AutoSpacing->False],
+          $CellContext`Eth[
+           $CellContext`be[]],
+          Editable->False]}], "+", 
+        InterpretationBox[
+         StyleBox[
+          SubscriptBox["Q", "q"],
+          ShowAutoStyles->False,
+          AutoSpacing->False],
+         $CellContext`Qq[],
+         Editable->False]}], ")"}]}], "+", 
+     FractionBox[
+      RowBox[{
+       RowBox[{"3", " ", 
+        InterpretationBox[
+         StyleBox[
+          RowBox[{
+           OverscriptBox["\[PartialD]", "_"], "[", 
+           InterpretationBox[
+            StyleBox["J",
+             ShowAutoStyles->False,
+             AutoSpacing->False],
+            $CellContext`J[],
+            Editable->False], "]"}],
+          ShowAutoStyles->False,
+          AutoSpacing->False],
+         $CellContext`Ethbar[
+          $CellContext`J[]],
+         Editable->False]}], "+", 
+       FractionBox[
+        RowBox[{
+         InterpretationBox[
+          StyleBox[
+           RowBox[{
+            OverscriptBox["\[PartialD]", "_"], "[", 
+            InterpretationBox[
+             StyleBox["J",
+              ShowAutoStyles->False,
+              AutoSpacing->False],
+             $CellContext`J[],
+             Editable->False], "]"}],
+           ShowAutoStyles->False,
+           AutoSpacing->False],
+          $CellContext`Ethbar[
+           $CellContext`J[]],
+          Editable->False], "-", 
+         RowBox[{
+          InterpretationBox[
+           StyleBox[
+            RowBox[{"\[PartialD]", "[", 
+             InterpretationBox[
+              StyleBox[
+               OverscriptBox["J", "_"],
+               ShowAutoStyles->False,
+               AutoSpacing->False],
+              $CellContext`Jb[],
+              Editable->False], "]"}],
+            ShowAutoStyles->False,
+            AutoSpacing->False],
+           $CellContext`Eth[
+            $CellContext`Jb[]],
+           Editable->False], " ", 
+          InterpretationBox[
+           StyleBox["J",
+            ShowAutoStyles->False,
+            AutoSpacing->False],
+           $CellContext`J[],
+           Editable->False]}], "-", 
+         RowBox[{
+          InterpretationBox[
+           StyleBox[
+            RowBox[{"\[PartialD]", "[", 
+             InterpretationBox[
+              StyleBox["J",
+               ShowAutoStyles->False,
+               AutoSpacing->False],
+              $CellContext`J[],
+              Editable->False], "]"}],
+            ShowAutoStyles->False,
+            AutoSpacing->False],
+           $CellContext`Eth[
+            $CellContext`J[]],
+           Editable->False], " ", 
+          InterpretationBox[
+           StyleBox[
+            OverscriptBox["J", "_"],
+            ShowAutoStyles->False,
+            AutoSpacing->False],
+           $CellContext`Jb[],
+           Editable->False]}]}], 
+        InterpretationBox[
+         StyleBox["K",
+          ShowAutoStyles->False,
+          AutoSpacing->False],
+         K[],
+         Editable->False]], "-", 
+       FractionBox[
+        RowBox[{
+         InterpretationBox[
+          StyleBox[
+           RowBox[{
+            OverscriptBox["\[PartialD]", "_"], "[", 
+            InterpretationBox[
+             StyleBox[
+              OverscriptBox["J", "_"],
+              ShowAutoStyles->False,
+              AutoSpacing->False],
+             $CellContext`Jb[],
+             Editable->False], "]"}],
+           ShowAutoStyles->False,
+           AutoSpacing->False],
+          $CellContext`Ethbar[
+           $CellContext`Jb[]],
+          Editable->False], " ", 
+         SuperscriptBox[
+          InterpretationBox[
+           StyleBox["J",
+            ShowAutoStyles->False,
+            AutoSpacing->False],
+           $CellContext`J[],
+           Editable->False], "2"]}], 
+        RowBox[{
+         InterpretationBox[
+          StyleBox["K",
+           ShowAutoStyles->False,
+           AutoSpacing->False],
+          K[],
+          Editable->False], " ", 
+         InterpretationBox[
+          StyleBox[
+           RowBox[{"(", 
+            RowBox[{"1", "+", "K"}], ")"}],
+           ShowAutoStyles->False,
+           AutoSpacing->False],
+          $CellContext`OnePlusK[],
+          Editable->False]}]], "+", 
+       RowBox[{"2", " ", 
+        InterpretationBox[
+         StyleBox["J",
+          ShowAutoStyles->False,
+          AutoSpacing->False],
+         $CellContext`J[],
+         Editable->False], " ", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"2", " ", 
+           InterpretationBox[
+            StyleBox[
+             RowBox[{
+              OverscriptBox["\[PartialD]", "_"], "[", 
+              InterpretationBox[
+               StyleBox["\[Beta]",
+                ShowAutoStyles->False,
+                AutoSpacing->False],
+               $CellContext`be[],
+               Editable->False], "]"}],
+             ShowAutoStyles->False,
+             AutoSpacing->False],
+            $CellContext`Ethbar[
+             $CellContext`be[]],
+            Editable->False]}], "+", 
+          InterpretationBox[
+           StyleBox[
+            SubscriptBox["Q", 
+             OverscriptBox["q", "_"]],
+            ShowAutoStyles->False,
+            AutoSpacing->False],
+           $CellContext`Qqb[],
+           Editable->False]}], ")"}]}]}], 
+      SqrtBox[
+       InterpretationBox[
+        StyleBox[
+         RowBox[{"(", 
+          RowBox[{"1", "+", "K"}], ")"}],
+         ShowAutoStyles->False,
+         AutoSpacing->False],
+        $CellContext`OnePlusK[],
+        Editable->False]]]}], ")"}]}], 
+  RowBox[{"32", " ", 
+   InterpretationBox[
+    StyleBox["R",
+     ShowAutoStyles->False,
+     AutoSpacing->False],
+    $CellContext`R[],
+    Editable->False]}]]], "Output",
+ CellLabel->"Out[564]=",ExpressionUUID->"f66f4f56-24d3-4489-8dee-7f774d8ad242"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"NPbAuto", "==", "NPbManual"}], "//", "Simplify"}]], "Input",
+ CellLabel->
+  "In[565]:=",ExpressionUUID->"2a597cc9-b3cf-4f9e-bd98-c33b7345d0bc"],
+
+Cell[BoxData["True"], "Output",
+ CellLabel->"Out[565]=",ExpressionUUID->"3a43304e-5afa-43a7-a2c5-009f2350c168"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"NPgAuto", "=", 
+  RowBox[{"Collect", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{
+          RowBox[{
+           RowBox[{
+            RowBox[{
+             RowBox[{
+              RowBox[{"NPg", "[", "]"}], "/.", "SubNPScalars"}], "/.", 
+             "PDuJtoH"}], "/.", "VtoW"}], "//.", 
+           "ScalarPDToNumericalCoords"}], "//.", "ScalarDerivLeibniz"}], "//.",
+          "qqdqTo\[CapitalTheta]"}], ")"}], "/.", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"y", "[", "]"}], "->", 
+         RowBox[{"1", "-", 
+          RowBox[{"OneMinusY", "[", "]"}]}]}], "}"}]}], "/.", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"\[CapitalTheta]", "->", "Zero"}], ",", 
+        RowBox[{"\[CapitalTheta]b", "->", "Zero"}]}], "}"}]}], "//", 
+     "Expand"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"OneMinusY", "[", "]"}], "}"}]}], "]"}]}]], "Input",
+ CellLabel->
+  "In[676]:=",ExpressionUUID->"598da0ba-f627-40f6-bad2-e5683c4090cf"],
+
+Cell[BoxData[
+ RowBox[{
+  FractionBox[
+   RowBox[{
+    SuperscriptBox["\[ExponentialE]", 
+     RowBox[{
+      RowBox[{"-", "2"}], " ", 
+      InterpretationBox[
+       StyleBox["\[Beta]",
+        ShowAutoStyles->False,
+        AutoSpacing->False],
+       $CellContext`be[],
+       Editable->False]}]], " ", 
+    InterpretationBox[
+     StyleBox[
+      RowBox[{
+       OverscriptBox["\[PartialD]", "_"], "[", 
+       InterpretationBox[
+        StyleBox[
+         SubscriptBox["U", 
+          OverscriptBox["q", "_"]],
+         ShowAutoStyles->False,
+         AutoSpacing->False],
+        $CellContext`Uqb[],
+        Editable->False], "]"}],
+      ShowAutoStyles->False,
+      AutoSpacing->False],
+     $CellContext`Ethbar[
+      $CellContext`Uqb[]],
+     Editable->False], " ", 
+    InterpretationBox[
+     StyleBox["J",
+      ShowAutoStyles->False,
+      AutoSpacing->False],
+     $CellContext`J[],
+     Editable->False]}], 
+   RowBox[{"4", " ", 
+    SqrtBox["2"]}]], "-", 
+  FractionBox[
+   RowBox[{
+    SuperscriptBox["\[ExponentialE]", 
+     RowBox[{
+      RowBox[{"-", "2"}], " ", 
+      InterpretationBox[
+       StyleBox["\[Beta]",
+        ShowAutoStyles->False,
+        AutoSpacing->False],
+       $CellContext`be[],
+       Editable->False]}]], " ", 
+    InterpretationBox[
+     StyleBox[
+      RowBox[{"\[PartialD]", "[", 
+       InterpretationBox[
+        StyleBox[
+         SubscriptBox["U", "q"],
+         ShowAutoStyles->False,
+         AutoSpacing->False],
+        $CellContext`Uq[],
+        Editable->False], "]"}],
+      ShowAutoStyles->False,
+      AutoSpacing->False],
+     $CellContext`Eth[
+      $CellContext`Uq[]],
+     Editable->False], " ", 
+    InterpretationBox[
+     StyleBox[
+      OverscriptBox["J", "_"],
+      ShowAutoStyles->False,
+      AutoSpacing->False],
+     $CellContext`Jb[],
+     Editable->False]}], 
+   RowBox[{"4", " ", 
+    SqrtBox["2"]}]], "-", 
+  FractionBox[
+   RowBox[{
+    SuperscriptBox["\[ExponentialE]", 
+     RowBox[{
+      RowBox[{"-", "2"}], " ", 
+      InterpretationBox[
+       StyleBox["\[Beta]",
+        ShowAutoStyles->False,
+        AutoSpacing->False],
+       $CellContext`be[],
+       Editable->False]}]], " ", 
+    InterpretationBox[
+     StyleBox[
+      RowBox[{"\[PartialD]", "[", 
+       InterpretationBox[
+        StyleBox[
+         SubscriptBox["U", 
+          OverscriptBox["q", "_"]],
+         ShowAutoStyles->False,
+         AutoSpacing->False],
+        $CellContext`Uqb[],
+        Editable->False], "]"}],
+      ShowAutoStyles->False,
+      AutoSpacing->False],
+     $CellContext`Eth[
+      $CellContext`Uqb[]],
+     Editable->False], " ", 
+    InterpretationBox[
+     StyleBox["K",
+      ShowAutoStyles->False,
+      AutoSpacing->False],
+     K[],
+     Editable->False]}], 
+   RowBox[{"4", " ", 
+    SqrtBox["2"]}]], "+", 
+  FractionBox[
+   RowBox[{
+    SuperscriptBox["\[ExponentialE]", 
+     RowBox[{
+      RowBox[{"-", "2"}], " ", 
+      InterpretationBox[
+       StyleBox["\[Beta]",
+        ShowAutoStyles->False,
+        AutoSpacing->False],
+       $CellContext`be[],
+       Editable->False]}]], " ", 
+    InterpretationBox[
+     StyleBox[
+      RowBox[{
+       OverscriptBox["\[PartialD]", "_"], "[", 
+       InterpretationBox[
+        StyleBox[
+         SubscriptBox["U", "q"],
+         ShowAutoStyles->False,
+         AutoSpacing->False],
+        $CellContext`Uq[],
+        Editable->False], "]"}],
+      ShowAutoStyles->False,
+      AutoSpacing->False],
+     $CellContext`Ethbar[
+      $CellContext`Uq[]],
+     Editable->False], " ", 
+    InterpretationBox[
+     StyleBox["K",
+      ShowAutoStyles->False,
+      AutoSpacing->False],
+     K[],
+     Editable->False]}], 
+   RowBox[{"4", " ", 
+    SqrtBox["2"]}]], "-", 
+  FractionBox[
+   RowBox[{
+    SuperscriptBox["\[ExponentialE]", 
+     RowBox[{
+      RowBox[{"-", "2"}], " ", 
+      InterpretationBox[
+       StyleBox["\[Beta]",
+        ShowAutoStyles->False,
+        AutoSpacing->False],
+       $CellContext`be[],
+       Editable->False]}]], " ", 
+    InterpretationBox[
+     StyleBox["H",
+      ShowAutoStyles->False,
+      AutoSpacing->False],
+     $CellContext`H[],
+     Editable->False], " ", 
+    InterpretationBox[
+     StyleBox[
+      OverscriptBox["J", "_"],
+      ShowAutoStyles->False,
+      AutoSpacing->False],
+     $CellContext`Jb[],
+     Editable->False]}], 
+   RowBox[{"4", " ", 
+    SqrtBox["2"], " ", 
+    RowBox[{"(", 
+     RowBox[{"1", "+", 
+      InterpretationBox[
+       StyleBox["K",
+        ShowAutoStyles->False,
+        AutoSpacing->False],
+       K[],
+       Editable->False]}], ")"}]}]], "+", 
+  FractionBox[
+   RowBox[{
+    SuperscriptBox["\[ExponentialE]", 
+     RowBox[{
+      RowBox[{"-", "2"}], " ", 
+      InterpretationBox[
+       StyleBox["\[Beta]",
+        ShowAutoStyles->False,
+        AutoSpacing->False],
+       $CellContext`be[],
+       Editable->False]}]], " ", 
+    InterpretationBox[
+     StyleBox[
+      OverscriptBox["H", "_"],
+      ShowAutoStyles->False,
+      AutoSpacing->False],
+     $CellContext`Hb[],
+     Editable->False], " ", 
+    InterpretationBox[
+     StyleBox["J",
+      ShowAutoStyles->False,
+      AutoSpacing->False],
+     $CellContext`J[],
+     Editable->False]}], 
+   RowBox[{
+    SqrtBox["2"], " ", 
+    RowBox[{"(", 
+     RowBox[{"4", "+", 
+      RowBox[{"4", " ", 
+       InterpretationBox[
+        StyleBox["K",
+         ShowAutoStyles->False,
+         AutoSpacing->False],
+        K[],
+        Editable->False]}]}], ")"}]}]], "+", 
+  FractionBox[
+   RowBox[{
+    SuperscriptBox["\[ExponentialE]", 
+     RowBox[{
+      RowBox[{"-", "2"}], " ", 
+      InterpretationBox[
+       StyleBox["\[Beta]",
+        ShowAutoStyles->False,
+        AutoSpacing->False],
+       $CellContext`be[],
+       Editable->False]}]], " ", 
+    InterpretationBox[
+     StyleBox[
+      RowBox[{"(", 
+       RowBox[{"1", "-", "y"}], ")"}],
+      ShowAutoStyles->False,
+      AutoSpacing->False],
+     $CellContext`OneMinusY[],
+     Editable->False], " ", 
+    InterpretationBox[
+     StyleBox[
+      RowBox[{
+       SubscriptBox["\[PartialD]", "y"], "[", 
+       InterpretationBox[
+        StyleBox["W",
+         ShowAutoStyles->False,
+         AutoSpacing->False],
+        $CellContext`W[],
+        Editable->False], "]"}],
+      ShowAutoStyles->False,
+      AutoSpacing->False],
+     $CellContext`PDy[
+      $CellContext`W[]],
+     Editable->False]}], 
+   RowBox[{"2", " ", 
+    SqrtBox["2"]}]], "+", 
+  FractionBox[
+   RowBox[{
+    SuperscriptBox["\[ExponentialE]", 
+     RowBox[{
+      RowBox[{"-", "2"}], " ", 
+      InterpretationBox[
+       StyleBox["\[Beta]",
+        ShowAutoStyles->False,
+        AutoSpacing->False],
+       $CellContext`be[],
+       Editable->False]}]], " ", 
+    InterpretationBox[
+     StyleBox[
+      OverscriptBox["J", "_"],
+      ShowAutoStyles->False,
+      AutoSpacing->False],
+     $CellContext`Jb[],
+     Editable->False], " ", 
+    InterpretationBox[
+     StyleBox[
+      RowBox[{"(", 
+       RowBox[{"1", "-", "y"}], ")"}],
+      ShowAutoStyles->False,
+      AutoSpacing->False],
+     $CellContext`OneMinusY[],
+     Editable->False], " ", 
+    InterpretationBox[
+     StyleBox[
+      RowBox[{
+       SubscriptBox["\[PartialD]", "y"], "[", 
+       InterpretationBox[
+        StyleBox["J",
+         ShowAutoStyles->False,
+         AutoSpacing->False],
+        $CellContext`J[],
+        Editable->False], "]"}],
+      ShowAutoStyles->False,
+      AutoSpacing->False],
+     $CellContext`PDy[
+      $CellContext`J[]],
+     Editable->False]}], 
+   RowBox[{
+    SqrtBox["2"], " ", 
+    RowBox[{"(", 
+     RowBox[{
+      FractionBox[
+       RowBox[{"16", " ", 
+        InterpretationBox[
+         StyleBox["R",
+          ShowAutoStyles->False,
+          AutoSpacing->False],
+         $CellContext`R[],
+         Editable->False]}], 
+       InterpretationBox[
+        StyleBox[
+         RowBox[{"(", 
+          RowBox[{"1", "-", "y"}], ")"}],
+         ShowAutoStyles->False,
+         AutoSpacing->False],
+        $CellContext`OneMinusY[],
+        Editable->False]], "+", 
+      FractionBox[
+       RowBox[{"16", " ", 
+        InterpretationBox[
+         StyleBox["K",
+          ShowAutoStyles->False,
+          AutoSpacing->False],
+         K[],
+         Editable->False], " ", 
+        InterpretationBox[
+         StyleBox["R",
+          ShowAutoStyles->False,
+          AutoSpacing->False],
+         $CellContext`R[],
+         Editable->False]}], 
+       InterpretationBox[
+        StyleBox[
+         RowBox[{"(", 
+          RowBox[{"1", "-", "y"}], ")"}],
+         ShowAutoStyles->False,
+         AutoSpacing->False],
+        $CellContext`OneMinusY[],
+        Editable->False]]}], ")"}]}]], "-", 
+  FractionBox[
+   RowBox[{
+    SuperscriptBox["\[ExponentialE]", 
+     RowBox[{
+      RowBox[{"-", "2"}], " ", 
+      InterpretationBox[
+       StyleBox["\[Beta]",
+        ShowAutoStyles->False,
+        AutoSpacing->False],
+       $CellContext`be[],
+       Editable->False]}]], " ", 
+    InterpretationBox[
+     StyleBox["J",
+      ShowAutoStyles->False,
+      AutoSpacing->False],
+     $CellContext`J[],
+     Editable->False], " ", 
+    InterpretationBox[
+     StyleBox[
+      RowBox[{"(", 
+       RowBox[{"1", "-", "y"}], ")"}],
+      ShowAutoStyles->False,
+      AutoSpacing->False],
+     $CellContext`OneMinusY[],
+     Editable->False], " ", 
+    InterpretationBox[
+     StyleBox[
+      RowBox[{
+       SubscriptBox["\[PartialD]", "y"], "[", 
+       InterpretationBox[
+        StyleBox[
+         OverscriptBox["J", "_"],
+         ShowAutoStyles->False,
+         AutoSpacing->False],
+        $CellContext`Jb[],
+        Editable->False], "]"}],
+      ShowAutoStyles->False,
+      AutoSpacing->False],
+     $CellContext`PDy[
+      $CellContext`Jb[]],
+     Editable->False]}], 
+   RowBox[{
+    SqrtBox["2"], " ", 
+    RowBox[{"(", 
+     RowBox[{
+      FractionBox[
+       RowBox[{"16", " ", 
+        InterpretationBox[
+         StyleBox["R",
+          ShowAutoStyles->False,
+          AutoSpacing->False],
+         $CellContext`R[],
+         Editable->False]}], 
+       InterpretationBox[
+        StyleBox[
+         RowBox[{"(", 
+          RowBox[{"1", "-", "y"}], ")"}],
+         ShowAutoStyles->False,
+         AutoSpacing->False],
+        $CellContext`OneMinusY[],
+        Editable->False]], "+", 
+      FractionBox[
+       RowBox[{"16", " ", 
+        InterpretationBox[
+         StyleBox["K",
+          ShowAutoStyles->False,
+          AutoSpacing->False],
+         K[],
+         Editable->False], " ", 
+        InterpretationBox[
+         StyleBox["R",
+          ShowAutoStyles->False,
+          AutoSpacing->False],
+         $CellContext`R[],
+         Editable->False]}], 
+       InterpretationBox[
+        StyleBox[
+         RowBox[{"(", 
+          RowBox[{"1", "-", "y"}], ")"}],
+         ShowAutoStyles->False,
+         AutoSpacing->False],
+        $CellContext`OneMinusY[],
+        Editable->False]]}], ")"}]}]], "-", 
+  FractionBox[
+   RowBox[{
+    SuperscriptBox["\[ExponentialE]", 
+     RowBox[{
+      RowBox[{"-", "2"}], " ", 
+      InterpretationBox[
+       StyleBox["\[Beta]",
+        ShowAutoStyles->False,
+        AutoSpacing->False],
+       $CellContext`be[],
+       Editable->False]}]], " ", 
+    InterpretationBox[
+     StyleBox[
+      RowBox[{
+       OverscriptBox["\[PartialD]", "_"], "[", 
+       InterpretationBox[
+        StyleBox["J",
+         ShowAutoStyles->False,
+         AutoSpacing->False],
+        $CellContext`J[],
+        Editable->False], "]"}],
+      ShowAutoStyles->False,
+      AutoSpacing->False],
+     $CellContext`Ethbar[
+      $CellContext`J[]],
+     Editable->False], " ", 
+    InterpretationBox[
+     StyleBox[
+      OverscriptBox["J", "_"],
+      ShowAutoStyles->False,
+      AutoSpacing->False],
+     $CellContext`Jb[],
+     Editable->False], " ", 
+    InterpretationBox[
+     StyleBox[
+      SubscriptBox["U", "q"],
+      ShowAutoStyles->False,
+      AutoSpacing->False],
+     $CellContext`Uq[],
+     Editable->False]}], 
+   RowBox[{"8", " ", 
+    SqrtBox["2"], " ", 
+    RowBox[{"(", 
+     RowBox[{"1", "+", 
+      InterpretationBox[
+       StyleBox["K",
+        ShowAutoStyles->False,
+        AutoSpacing->False],
+       K[],
+       Editable->False]}], ")"}]}]], "+", 
+  FractionBox[
+   RowBox[{
+    SuperscriptBox["\[ExponentialE]", 
+     RowBox[{
+      RowBox[{"-", "2"}], " ", 
+      InterpretationBox[
+       StyleBox["\[Beta]",
+        ShowAutoStyles->False,
+        AutoSpacing->False],
+       $CellContext`be[],
+       Editable->False]}]], " ", 
+    InterpretationBox[
+     StyleBox[
+      RowBox[{
+       OverscriptBox["\[PartialD]", "_"], "[", 
+       InterpretationBox[
+        StyleBox[
+         OverscriptBox["J", "_"],
+         ShowAutoStyles->False,
+         AutoSpacing->False],
+        $CellContext`Jb[],
+        Editable->False], "]"}],
+      ShowAutoStyles->False,
+      AutoSpacing->False],
+     $CellContext`Ethbar[
+      $CellContext`Jb[]],
+     Editable->False], " ", 
+    InterpretationBox[
+     StyleBox["J",
+      ShowAutoStyles->False,
+      AutoSpacing->False],
+     $CellContext`J[],
+     Editable->False], " ", 
+    InterpretationBox[
+     StyleBox[
+      SubscriptBox["U", "q"],
+      ShowAutoStyles->False,
+      AutoSpacing->False],
+     $CellContext`Uq[],
+     Editable->False]}], 
+   RowBox[{
+    SqrtBox["2"], " ", 
+    RowBox[{"(", 
+     RowBox[{"8", "+", 
+      RowBox[{"8", " ", 
+       InterpretationBox[
+        StyleBox["K",
+         ShowAutoStyles->False,
+         AutoSpacing->False],
+        K[],
+        Editable->False]}]}], ")"}]}]], "-", 
+  FractionBox[
+   RowBox[{
+    SuperscriptBox["\[ExponentialE]", 
+     RowBox[{
+      RowBox[{"-", "2"}], " ", 
+      InterpretationBox[
+       StyleBox["\[Beta]",
+        ShowAutoStyles->False,
+        AutoSpacing->False],
+       $CellContext`be[],
+       Editable->False]}]], " ", 
+    InterpretationBox[
+     StyleBox[
+      RowBox[{"\[PartialD]", "[", 
+       InterpretationBox[
+        StyleBox["J",
+         ShowAutoStyles->False,
+         AutoSpacing->False],
+        $CellContext`J[],
+        Editable->False], "]"}],
+      ShowAutoStyles->False,
+      AutoSpacing->False],
+     $CellContext`Eth[
+      $CellContext`J[]],
+     Editable->False], " ", 
+    InterpretationBox[
+     StyleBox[
+      OverscriptBox["J", "_"],
+      ShowAutoStyles->False,
+      AutoSpacing->False],
+     $CellContext`Jb[],
+     Editable->False], " ", 
+    InterpretationBox[
+     StyleBox[
+      SubscriptBox["U", 
+       OverscriptBox["q", "_"]],
+      ShowAutoStyles->False,
+      AutoSpacing->False],
+     $CellContext`Uqb[],
+     Editable->False]}], 
+   RowBox[{"8", " ", 
+    SqrtBox["2"], " ", 
+    RowBox[{"(", 
+     RowBox[{"1", "+", 
+      InterpretationBox[
+       StyleBox["K",
+        ShowAutoStyles->False,
+        AutoSpacing->False],
+       K[],
+       Editable->False]}], ")"}]}]], "+", 
+  FractionBox[
+   RowBox[{
+    SuperscriptBox["\[ExponentialE]", 
+     RowBox[{
+      RowBox[{"-", "2"}], " ", 
+      InterpretationBox[
+       StyleBox["\[Beta]",
+        ShowAutoStyles->False,
+        AutoSpacing->False],
+       $CellContext`be[],
+       Editable->False]}]], " ", 
+    InterpretationBox[
+     StyleBox[
+      RowBox[{"\[PartialD]", "[", 
+       InterpretationBox[
+        StyleBox[
+         OverscriptBox["J", "_"],
+         ShowAutoStyles->False,
+         AutoSpacing->False],
+        $CellContext`Jb[],
+        Editable->False], "]"}],
+      ShowAutoStyles->False,
+      AutoSpacing->False],
+     $CellContext`Eth[
+      $CellContext`Jb[]],
+     Editable->False], " ", 
+    InterpretationBox[
+     StyleBox["J",
+      ShowAutoStyles->False,
+      AutoSpacing->False],
+     $CellContext`J[],
+     Editable->False], " ", 
+    InterpretationBox[
+     StyleBox[
+      SubscriptBox["U", 
+       OverscriptBox["q", "_"]],
+      ShowAutoStyles->False,
+      AutoSpacing->False],
+     $CellContext`Uqb[],
+     Editable->False]}], 
+   RowBox[{
+    SqrtBox["2"], " ", 
+    RowBox[{"(", 
+     RowBox[{"8", "+", 
+      RowBox[{"8", " ", 
+       InterpretationBox[
+        StyleBox["K",
+         ShowAutoStyles->False,
+         AutoSpacing->False],
+        K[],
+        Editable->False]}]}], ")"}]}]], "+", 
+  FractionBox[
+   RowBox[{
+    SuperscriptBox["\[ExponentialE]", 
+     RowBox[{
+      RowBox[{"-", "2"}], " ", 
+      InterpretationBox[
+       StyleBox["\[Beta]",
+        ShowAutoStyles->False,
+        AutoSpacing->False],
+       $CellContext`be[],
+       Editable->False]}]], " ", 
+    InterpretationBox[
+     StyleBox["W",
+      ShowAutoStyles->False,
+      AutoSpacing->False],
+     $CellContext`W[],
+     Editable->False]}], 
+   RowBox[{"2", " ", 
+    SqrtBox["2"]}]], "+", 
+  FractionBox[
+   RowBox[{
+    SqrtBox["2"], " ", 
+    SuperscriptBox["\[ExponentialE]", 
+     RowBox[{
+      RowBox[{"-", "2"}], " ", 
+      InterpretationBox[
+       StyleBox["\[Beta]",
+        ShowAutoStyles->False,
+        AutoSpacing->False],
+       $CellContext`be[],
+       Editable->False]}]], " ", 
+    InterpretationBox[
+     StyleBox[
+      OverscriptBox["J", "_"],
+      ShowAutoStyles->False,
+      AutoSpacing->False],
+     $CellContext`Jb[],
+     Editable->False], " ", 
+    InterpretationBox[
+     StyleBox[
+      RowBox[{
+       SubscriptBox["\[PartialD]", "y"], "[", 
+       InterpretationBox[
+        StyleBox["J",
+         ShowAutoStyles->False,
+         AutoSpacing->False],
+        $CellContext`J[],
+        Editable->False], "]"}],
+      ShowAutoStyles->False,
+      AutoSpacing->False],
+     $CellContext`PDy[
+      $CellContext`J[]],
+     Editable->False], " ", 
+    InterpretationBox[
+     StyleBox["R",
+      ShowAutoStyles->False,
+      AutoSpacing->False],
+     $CellContext`R[],
+     Editable->False], " ", 
+    InterpretationBox[
+     StyleBox["W",
+      ShowAutoStyles->False,
+      AutoSpacing->False],
+     $CellContext`W[],
+     Editable->False]}], 
+   RowBox[{
+    FractionBox[
+     RowBox[{"16", " ", 
+      InterpretationBox[
+       StyleBox["R",
+        ShowAutoStyles->False,
+        AutoSpacing->False],
+       $CellContext`R[],
+       Editable->False]}], 
+     InterpretationBox[
+      StyleBox[
+       RowBox[{"(", 
+        RowBox[{"1", "-", "y"}], ")"}],
+       ShowAutoStyles->False,
+       AutoSpacing->False],
+      $CellContext`OneMinusY[],
+      Editable->False]], "+", 
+    FractionBox[
+     RowBox[{"16", " ", 
+      InterpretationBox[
+       StyleBox["K",
+        ShowAutoStyles->False,
+        AutoSpacing->False],
+       K[],
+       Editable->False], " ", 
+      InterpretationBox[
+       StyleBox["R",
+        ShowAutoStyles->False,
+        AutoSpacing->False],
+       $CellContext`R[],
+       Editable->False]}], 
+     InterpretationBox[
+      StyleBox[
+       RowBox[{"(", 
+        RowBox[{"1", "-", "y"}], ")"}],
+       ShowAutoStyles->False,
+       AutoSpacing->False],
+      $CellContext`OneMinusY[],
+      Editable->False]]}]], "-", 
+  FractionBox[
+   RowBox[{
+    SqrtBox["2"], " ", 
+    SuperscriptBox["\[ExponentialE]", 
+     RowBox[{
+      RowBox[{"-", "2"}], " ", 
+      InterpretationBox[
+       StyleBox["\[Beta]",
+        ShowAutoStyles->False,
+        AutoSpacing->False],
+       $CellContext`be[],
+       Editable->False]}]], " ", 
+    InterpretationBox[
+     StyleBox["J",
+      ShowAutoStyles->False,
+      AutoSpacing->False],
+     $CellContext`J[],
+     Editable->False], " ", 
+    InterpretationBox[
+     StyleBox[
+      RowBox[{
+       SubscriptBox["\[PartialD]", "y"], "[", 
+       InterpretationBox[
+        StyleBox[
+         OverscriptBox["J", "_"],
+         ShowAutoStyles->False,
+         AutoSpacing->False],
+        $CellContext`Jb[],
+        Editable->False], "]"}],
+      ShowAutoStyles->False,
+      AutoSpacing->False],
+     $CellContext`PDy[
+      $CellContext`Jb[]],
+     Editable->False], " ", 
+    InterpretationBox[
+     StyleBox["R",
+      ShowAutoStyles->False,
+      AutoSpacing->False],
+     $CellContext`R[],
+     Editable->False], " ", 
+    InterpretationBox[
+     StyleBox["W",
+      ShowAutoStyles->False,
+      AutoSpacing->False],
+     $CellContext`W[],
+     Editable->False]}], 
+   RowBox[{
+    FractionBox[
+     RowBox[{"16", " ", 
+      InterpretationBox[
+       StyleBox["R",
+        ShowAutoStyles->False,
+        AutoSpacing->False],
+       $CellContext`R[],
+       Editable->False]}], 
+     InterpretationBox[
+      StyleBox[
+       RowBox[{"(", 
+        RowBox[{"1", "-", "y"}], ")"}],
+       ShowAutoStyles->False,
+       AutoSpacing->False],
+      $CellContext`OneMinusY[],
+      Editable->False]], "+", 
+    FractionBox[
+     RowBox[{"16", " ", 
+      InterpretationBox[
+       StyleBox["K",
+        ShowAutoStyles->False,
+        AutoSpacing->False],
+       K[],
+       Editable->False], " ", 
+      InterpretationBox[
+       StyleBox["R",
+        ShowAutoStyles->False,
+        AutoSpacing->False],
+       $CellContext`R[],
+       Editable->False]}], 
+     InterpretationBox[
+      StyleBox[
+       RowBox[{"(", 
+        RowBox[{"1", "-", "y"}], ")"}],
+       ShowAutoStyles->False,
+       AutoSpacing->False],
+      $CellContext`OneMinusY[],
+      Editable->False]]}]]}]], "Output",
+ CellLabel->"Out[676]=",ExpressionUUID->"c4146ab6-604a-424a-8cf5-5afb62c64731"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"NPgManual", "=", 
+  RowBox[{
+   FractionBox["1", 
+    RowBox[{"4", 
+     SqrtBox["2"]}]], 
+   RowBox[{"Exp", "[", 
+    RowBox[{
+     RowBox[{"-", "2"}], 
+     RowBox[{"be", "[", "]"}]}], "]"}], 
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{
+      FractionBox["1", 
+       RowBox[{"2", 
+        RowBox[{"OnePlusK", "[", "]"}]}]], 
+      RowBox[{"(", 
+       RowBox[{
+        FractionBox[
+         RowBox[{
+          SuperscriptBox[
+           RowBox[{"OneMinusY", "[", "]"}], "2"], 
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{
+             RowBox[{"Jb", "[", "]"}], 
+             RowBox[{"PDy", "[", 
+              RowBox[{"J", "[", "]"}], "]"}]}], "-", 
+            RowBox[{
+             RowBox[{"J", "[", "]"}], 
+             RowBox[{"PDy", "[", 
+              RowBox[{"Jb", "[", "]"}], "]"}]}]}], ")"}]}], 
+         RowBox[{"2", 
+          RowBox[{"R", "[", "]"}]}]], "+", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"2", 
+           RowBox[{"Hb", "[", "]"}], 
+           RowBox[{"J", "[", "]"}]}], "-", 
+          RowBox[{"2", 
+           RowBox[{"H", "[", "]"}], 
+           RowBox[{"Jb", "[", "]"}]}], "+", 
+          RowBox[{
+           RowBox[{"Uq", "[", "]"}], 
+           RowBox[{"J", "[", "]"}], 
+           RowBox[{"Ethbar", "[", 
+            RowBox[{"Jb", "[", "]"}], "]"}]}], "-", 
+          RowBox[{
+           RowBox[{"Uq", "[", "]"}], 
+           RowBox[{"Jb", "[", "]"}], 
+           RowBox[{"Ethbar", "[", 
+            RowBox[{"J", "[", "]"}], "]"}]}], "+", 
+          RowBox[{
+           RowBox[{"Uqb", "[", "]"}], 
+           RowBox[{"J", "[", "]"}], 
+           RowBox[{"Eth", "[", 
+            RowBox[{"Jb", "[", "]"}], "]"}]}], "-", 
+          RowBox[{
+           RowBox[{"Uqb", "[", "]"}], 
+           RowBox[{"Jb", "[", "]"}], 
+           RowBox[{"Eth", "[", 
+            RowBox[{"J", "[", "]"}], "]"}]}]}], ")"}]}], ")"}]}], "+", 
+     RowBox[{
+      RowBox[{"OneMinusY", "[", "]"}], 
+      RowBox[{"(", 
+       RowBox[{
+        FractionBox[
+         RowBox[{
+          RowBox[{"W", "[", "]"}], 
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{
+             RowBox[{"Jb", "[", "]"}], "*", 
+             RowBox[{"PDy", "[", 
+              RowBox[{"J", "[", "]"}], "]"}]}], "-", 
+            RowBox[{
+             RowBox[{"J", "[", "]"}], "*", 
+             RowBox[{"PDy", "[", 
+              RowBox[{"Jb", "[", "]"}], "]"}]}]}], ")"}]}], 
+         RowBox[{"2", 
+          RowBox[{"OnePlusK", "[", "]"}]}]], "+", 
+        RowBox[{"2", 
+         RowBox[{"PDy", "[", 
+          RowBox[{"W", "[", "]"}], "]"}]}]}], ")"}]}], "+", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"2", 
+        RowBox[{"W", "[", "]"}]}], "+", 
+       RowBox[{
+        RowBox[{"Ethbar", "[", 
+         RowBox[{"Uqb", "[", "]"}], "]"}], 
+        RowBox[{"J", "[", "]"}]}], "-", 
+       RowBox[{
+        RowBox[{"Eth", "[", 
+         RowBox[{"Uq", "[", "]"}], "]"}], 
+        RowBox[{"Jb", "[", "]"}]}], "-", 
+       RowBox[{
+        RowBox[{"Eth", "[", 
+         RowBox[{"Uqb", "[", "]"}], "]"}], 
+        RowBox[{"K", "[", "]"}]}], "+", 
+       RowBox[{
+        RowBox[{"Ethbar", "[", 
+         RowBox[{"Uq", "[", "]"}], "]"}], 
+        RowBox[{"K", "[", "]"}]}]}], ")"}]}], ")"}]}]}]], "Input",
+ CellLabel->
+  "In[669]:=",ExpressionUUID->"a3a5e5e4-c2d7-456c-be07-c20a23c58c1a"],
+
+Cell[BoxData[
+ RowBox[{
+  FractionBox["1", 
+   RowBox[{"4", " ", 
+    SqrtBox["2"]}]], 
+  RowBox[{
+   SuperscriptBox["\[ExponentialE]", 
+    RowBox[{
+     RowBox[{"-", "2"}], " ", 
+     InterpretationBox[
+      StyleBox["\[Beta]",
+       ShowAutoStyles->False,
+       AutoSpacing->False],
+      $CellContext`be[],
+      Editable->False]}]], " ", 
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{
+      InterpretationBox[
+       StyleBox[
+        RowBox[{
+         OverscriptBox["\[PartialD]", "_"], "[", 
+         InterpretationBox[
+          StyleBox[
+           SubscriptBox["U", 
+            OverscriptBox["q", "_"]],
+           ShowAutoStyles->False,
+           AutoSpacing->False],
+          $CellContext`Uqb[],
+          Editable->False], "]"}],
+        ShowAutoStyles->False,
+        AutoSpacing->False],
+       $CellContext`Ethbar[
+        $CellContext`Uqb[]],
+       Editable->False], " ", 
+      InterpretationBox[
+       StyleBox["J",
+        ShowAutoStyles->False,
+        AutoSpacing->False],
+       $CellContext`J[],
+       Editable->False]}], "-", 
+     RowBox[{
+      InterpretationBox[
+       StyleBox[
+        RowBox[{"\[PartialD]", "[", 
+         InterpretationBox[
+          StyleBox[
+           SubscriptBox["U", "q"],
+           ShowAutoStyles->False,
+           AutoSpacing->False],
+          $CellContext`Uq[],
+          Editable->False], "]"}],
+        ShowAutoStyles->False,
+        AutoSpacing->False],
+       $CellContext`Eth[
+        $CellContext`Uq[]],
+       Editable->False], " ", 
+      InterpretationBox[
+       StyleBox[
+        OverscriptBox["J", "_"],
+        ShowAutoStyles->False,
+        AutoSpacing->False],
+       $CellContext`Jb[],
+       Editable->False]}], "-", 
+     RowBox[{
+      InterpretationBox[
+       StyleBox[
+        RowBox[{"\[PartialD]", "[", 
+         InterpretationBox[
+          StyleBox[
+           SubscriptBox["U", 
+            OverscriptBox["q", "_"]],
+           ShowAutoStyles->False,
+           AutoSpacing->False],
+          $CellContext`Uqb[],
+          Editable->False], "]"}],
+        ShowAutoStyles->False,
+        AutoSpacing->False],
+       $CellContext`Eth[
+        $CellContext`Uqb[]],
+       Editable->False], " ", 
+      InterpretationBox[
+       StyleBox["K",
+        ShowAutoStyles->False,
+        AutoSpacing->False],
+       K[],
+       Editable->False]}], "+", 
+     RowBox[{
+      InterpretationBox[
+       StyleBox[
+        RowBox[{
+         OverscriptBox["\[PartialD]", "_"], "[", 
+         InterpretationBox[
+          StyleBox[
+           SubscriptBox["U", "q"],
+           ShowAutoStyles->False,
+           AutoSpacing->False],
+          $CellContext`Uq[],
+          Editable->False], "]"}],
+        ShowAutoStyles->False,
+        AutoSpacing->False],
+       $CellContext`Ethbar[
+        $CellContext`Uq[]],
+       Editable->False], " ", 
+      InterpretationBox[
+       StyleBox["K",
+        ShowAutoStyles->False,
+        AutoSpacing->False],
+       K[],
+       Editable->False]}], "+", 
+     FractionBox[
+      RowBox[{
+       RowBox[{"2", " ", 
+        InterpretationBox[
+         StyleBox[
+          OverscriptBox["H", "_"],
+          ShowAutoStyles->False,
+          AutoSpacing->False],
+         $CellContext`Hb[],
+         Editable->False], " ", 
+        InterpretationBox[
+         StyleBox["J",
+          ShowAutoStyles->False,
+          AutoSpacing->False],
+         $CellContext`J[],
+         Editable->False]}], "-", 
+       RowBox[{"2", " ", 
+        InterpretationBox[
+         StyleBox["H",
+          ShowAutoStyles->False,
+          AutoSpacing->False],
+         $CellContext`H[],
+         Editable->False], " ", 
+        InterpretationBox[
+         StyleBox[
+          OverscriptBox["J", "_"],
+          ShowAutoStyles->False,
+          AutoSpacing->False],
+         $CellContext`Jb[],
+         Editable->False]}], "+", 
+       FractionBox[
+        RowBox[{
+         SuperscriptBox[
+          InterpretationBox[
+           StyleBox[
+            RowBox[{"(", 
+             RowBox[{"1", "-", "y"}], ")"}],
+            ShowAutoStyles->False,
+            AutoSpacing->False],
+           $CellContext`OneMinusY[],
+           Editable->False], "2"], " ", 
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{
+            InterpretationBox[
+             StyleBox[
+              OverscriptBox["J", "_"],
+              ShowAutoStyles->False,
+              AutoSpacing->False],
+             $CellContext`Jb[],
+             Editable->False], " ", 
+            InterpretationBox[
+             StyleBox[
+              RowBox[{
+               SubscriptBox["\[PartialD]", "y"], "[", 
+               InterpretationBox[
+                StyleBox["J",
+                 ShowAutoStyles->False,
+                 AutoSpacing->False],
+                $CellContext`J[],
+                Editable->False], "]"}],
+              ShowAutoStyles->False,
+              AutoSpacing->False],
+             $CellContext`PDy[
+              $CellContext`J[]],
+             Editable->False]}], "-", 
+           RowBox[{
+            InterpretationBox[
+             StyleBox["J",
+              ShowAutoStyles->False,
+              AutoSpacing->False],
+             $CellContext`J[],
+             Editable->False], " ", 
+            InterpretationBox[
+             StyleBox[
+              RowBox[{
+               SubscriptBox["\[PartialD]", "y"], "[", 
+               InterpretationBox[
+                StyleBox[
+                 OverscriptBox["J", "_"],
+                 ShowAutoStyles->False,
+                 AutoSpacing->False],
+                $CellContext`Jb[],
+                Editable->False], "]"}],
+              ShowAutoStyles->False,
+              AutoSpacing->False],
+             $CellContext`PDy[
+              $CellContext`Jb[]],
+             Editable->False]}]}], ")"}]}], 
+        RowBox[{"2", " ", 
+         InterpretationBox[
+          StyleBox["R",
+           ShowAutoStyles->False,
+           AutoSpacing->False],
+          $CellContext`R[],
+          Editable->False]}]], "+", 
+       RowBox[{
+        InterpretationBox[
+         StyleBox[
+          RowBox[{
+           OverscriptBox["\[PartialD]", "_"], "[", 
+           InterpretationBox[
+            StyleBox[
+             OverscriptBox["J", "_"],
+             ShowAutoStyles->False,
+             AutoSpacing->False],
+            $CellContext`Jb[],
+            Editable->False], "]"}],
+          ShowAutoStyles->False,
+          AutoSpacing->False],
+         $CellContext`Ethbar[
+          $CellContext`Jb[]],
+         Editable->False], " ", 
+        InterpretationBox[
+         StyleBox["J",
+          ShowAutoStyles->False,
+          AutoSpacing->False],
+         $CellContext`J[],
+         Editable->False], " ", 
+        InterpretationBox[
+         StyleBox[
+          SubscriptBox["U", "q"],
+          ShowAutoStyles->False,
+          AutoSpacing->False],
+         $CellContext`Uq[],
+         Editable->False]}], "-", 
+       RowBox[{
+        InterpretationBox[
+         StyleBox[
+          RowBox[{
+           OverscriptBox["\[PartialD]", "_"], "[", 
+           InterpretationBox[
+            StyleBox["J",
+             ShowAutoStyles->False,
+             AutoSpacing->False],
+            $CellContext`J[],
+            Editable->False], "]"}],
+          ShowAutoStyles->False,
+          AutoSpacing->False],
+         $CellContext`Ethbar[
+          $CellContext`J[]],
+         Editable->False], " ", 
+        InterpretationBox[
+         StyleBox[
+          OverscriptBox["J", "_"],
+          ShowAutoStyles->False,
+          AutoSpacing->False],
+         $CellContext`Jb[],
+         Editable->False], " ", 
+        InterpretationBox[
+         StyleBox[
+          SubscriptBox["U", "q"],
+          ShowAutoStyles->False,
+          AutoSpacing->False],
+         $CellContext`Uq[],
+         Editable->False]}], "+", 
+       RowBox[{
+        InterpretationBox[
+         StyleBox[
+          RowBox[{"\[PartialD]", "[", 
+           InterpretationBox[
+            StyleBox[
+             OverscriptBox["J", "_"],
+             ShowAutoStyles->False,
+             AutoSpacing->False],
+            $CellContext`Jb[],
+            Editable->False], "]"}],
+          ShowAutoStyles->False,
+          AutoSpacing->False],
+         $CellContext`Eth[
+          $CellContext`Jb[]],
+         Editable->False], " ", 
+        InterpretationBox[
+         StyleBox["J",
+          ShowAutoStyles->False,
+          AutoSpacing->False],
+         $CellContext`J[],
+         Editable->False], " ", 
+        InterpretationBox[
+         StyleBox[
+          SubscriptBox["U", 
+           OverscriptBox["q", "_"]],
+          ShowAutoStyles->False,
+          AutoSpacing->False],
+         $CellContext`Uqb[],
+         Editable->False]}], "-", 
+       RowBox[{
+        InterpretationBox[
+         StyleBox[
+          RowBox[{"\[PartialD]", "[", 
+           InterpretationBox[
+            StyleBox["J",
+             ShowAutoStyles->False,
+             AutoSpacing->False],
+            $CellContext`J[],
+            Editable->False], "]"}],
+          ShowAutoStyles->False,
+          AutoSpacing->False],
+         $CellContext`Eth[
+          $CellContext`J[]],
+         Editable->False], " ", 
+        InterpretationBox[
+         StyleBox[
+          OverscriptBox["J", "_"],
+          ShowAutoStyles->False,
+          AutoSpacing->False],
+         $CellContext`Jb[],
+         Editable->False], " ", 
+        InterpretationBox[
+         StyleBox[
+          SubscriptBox["U", 
+           OverscriptBox["q", "_"]],
+          ShowAutoStyles->False,
+          AutoSpacing->False],
+         $CellContext`Uqb[],
+         Editable->False]}]}], 
+      RowBox[{"2", " ", 
+       InterpretationBox[
+        StyleBox[
+         RowBox[{"(", 
+          RowBox[{"1", "+", "K"}], ")"}],
+         ShowAutoStyles->False,
+         AutoSpacing->False],
+        $CellContext`OnePlusK[],
+        Editable->False]}]], "+", 
+     RowBox[{"2", " ", 
+      InterpretationBox[
+       StyleBox["W",
+        ShowAutoStyles->False,
+        AutoSpacing->False],
+       $CellContext`W[],
+       Editable->False]}], "+", 
+     RowBox[{
+      InterpretationBox[
+       StyleBox[
+        RowBox[{"(", 
+         RowBox[{"1", "-", "y"}], ")"}],
+        ShowAutoStyles->False,
+        AutoSpacing->False],
+       $CellContext`OneMinusY[],
+       Editable->False], " ", 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"2", " ", 
+         InterpretationBox[
+          StyleBox[
+           RowBox[{
+            SubscriptBox["\[PartialD]", "y"], "[", 
+            InterpretationBox[
+             StyleBox["W",
+              ShowAutoStyles->False,
+              AutoSpacing->False],
+             $CellContext`W[],
+             Editable->False], "]"}],
+           ShowAutoStyles->False,
+           AutoSpacing->False],
+          $CellContext`PDy[
+           $CellContext`W[]],
+          Editable->False]}], "+", 
+        FractionBox[
+         RowBox[{
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{
+             InterpretationBox[
+              StyleBox[
+               OverscriptBox["J", "_"],
+               ShowAutoStyles->False,
+               AutoSpacing->False],
+              $CellContext`Jb[],
+              Editable->False], " ", 
+             InterpretationBox[
+              StyleBox[
+               RowBox[{
+                SubscriptBox["\[PartialD]", "y"], "[", 
+                InterpretationBox[
+                 StyleBox["J",
+                  ShowAutoStyles->False,
+                  AutoSpacing->False],
+                 $CellContext`J[],
+                 Editable->False], "]"}],
+               ShowAutoStyles->False,
+               AutoSpacing->False],
+              $CellContext`PDy[
+               $CellContext`J[]],
+              Editable->False]}], "-", 
+            RowBox[{
+             InterpretationBox[
+              StyleBox["J",
+               ShowAutoStyles->False,
+               AutoSpacing->False],
+              $CellContext`J[],
+              Editable->False], " ", 
+             InterpretationBox[
+              StyleBox[
+               RowBox[{
+                SubscriptBox["\[PartialD]", "y"], "[", 
+                InterpretationBox[
+                 StyleBox[
+                  OverscriptBox["J", "_"],
+                  ShowAutoStyles->False,
+                  AutoSpacing->False],
+                 $CellContext`Jb[],
+                 Editable->False], "]"}],
+               ShowAutoStyles->False,
+               AutoSpacing->False],
+              $CellContext`PDy[
+               $CellContext`Jb[]],
+              Editable->False]}]}], ")"}], " ", 
+          InterpretationBox[
+           StyleBox["W",
+            ShowAutoStyles->False,
+            AutoSpacing->False],
+           $CellContext`W[],
+           Editable->False]}], 
+         RowBox[{"2", " ", 
+          InterpretationBox[
+           StyleBox[
+            RowBox[{"(", 
+             RowBox[{"1", "+", "K"}], ")"}],
+            ShowAutoStyles->False,
+            AutoSpacing->False],
+           $CellContext`OnePlusK[],
+           Editable->False]}]]}], ")"}]}]}], ")"}]}]}]], "Output",
+ CellLabel->"Out[669]=",ExpressionUUID->"faf805f5-70bb-4b05-a96b-75cf9dbda81e"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"NPgAuto", "==", "NPgManual"}], "/.", 
+   RowBox[{
+    RowBox[{"OnePlusK", "[", "]"}], "->", 
+    RowBox[{"1", "+", 
+     RowBox[{"K", "[", "]"}]}]}]}], "//", "Simplify"}]], "Input",
+ CellLabel->
+  "In[679]:=",ExpressionUUID->"b800fd63-4071-4e0c-9007-94690a590980"],
+
+Cell[BoxData["True"], "Output",
+ CellLabel->"Out[679]=",ExpressionUUID->"f3ff75e1-5b15-428d-881a-ab1847c3d677"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"NPeAuto", "=", 
+  RowBox[{"Collect", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{
+          RowBox[{
+           RowBox[{
+            RowBox[{
+             RowBox[{"NPe", "[", "]"}], "/.", "SubNPScalars"}], "/.", 
+            "PDuJtoH"}], "/.", "VtoW"}], "//.", "ScalarPDToNumericalCoords"}],
+          "//.", "ScalarDerivLeibniz"}], ")"}], "/.", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"y", "[", "]"}], "->", 
+         RowBox[{"1", "-", 
+          RowBox[{"OneMinusY", "[", "]"}]}]}], "}"}]}], "/.", 
+      RowBox[{
+       RowBox[{"K", "[", "]"}], "->", 
+       RowBox[{
+        RowBox[{"OnePlusK", "[", "]"}], "-", "1"}]}]}], "//", "Simplify"}], 
+    ",", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"R", "[", "]"}], ",", 
+      RowBox[{"OneMinusY", "[", "]"}], ",", 
+      RowBox[{"OnePlusK", "[", "]"}]}], "}"}]}], "]"}]}]], "Input",
+ CellLabel->
+  "In[696]:=",ExpressionUUID->"fa8c5aea-7bb6-4621-8e0b-bc5fcf61a726"],
+
+Cell[BoxData[
+ FractionBox[
+  RowBox[{
+   SuperscriptBox[
+    InterpretationBox[
+     StyleBox[
+      RowBox[{"(", 
+       RowBox[{"1", "-", "y"}], ")"}],
+      ShowAutoStyles->False,
+      AutoSpacing->False],
+     $CellContext`OneMinusY[],
+     Editable->False], "2"], " ", 
+   RowBox[{"(", 
+    RowBox[{
+     FractionBox[
+      InterpretationBox[
+       StyleBox[
+        RowBox[{
+         SubscriptBox["\[PartialD]", "y"], "[", 
+         InterpretationBox[
+          StyleBox["\[Beta]",
+           ShowAutoStyles->False,
+           AutoSpacing->False],
+          $CellContext`be[],
+          Editable->False], "]"}],
+        ShowAutoStyles->False,
+        AutoSpacing->False],
+       $CellContext`PDy[
+        $CellContext`be[]],
+       Editable->False], 
+      RowBox[{"2", " ", 
+       SqrtBox["2"]}]], "+", 
+     FractionBox[
+      RowBox[{
+       RowBox[{
+        RowBox[{"-", 
+         InterpretationBox[
+          StyleBox[
+           OverscriptBox["J", "_"],
+           ShowAutoStyles->False,
+           AutoSpacing->False],
+          $CellContext`Jb[],
+          Editable->False]}], " ", 
+        InterpretationBox[
+         StyleBox[
+          RowBox[{
+           SubscriptBox["\[PartialD]", "y"], "[", 
+           InterpretationBox[
+            StyleBox["J",
+             ShowAutoStyles->False,
+             AutoSpacing->False],
+            $CellContext`J[],
+            Editable->False], "]"}],
+          ShowAutoStyles->False,
+          AutoSpacing->False],
+         $CellContext`PDy[
+          $CellContext`J[]],
+         Editable->False]}], "+", 
+       RowBox[{
+        InterpretationBox[
+         StyleBox["J",
+          ShowAutoStyles->False,
+          AutoSpacing->False],
+         $CellContext`J[],
+         Editable->False], " ", 
+        InterpretationBox[
+         StyleBox[
+          RowBox[{
+           SubscriptBox["\[PartialD]", "y"], "[", 
+           InterpretationBox[
+            StyleBox[
+             OverscriptBox["J", "_"],
+             ShowAutoStyles->False,
+             AutoSpacing->False],
+            $CellContext`Jb[],
+            Editable->False], "]"}],
+          ShowAutoStyles->False,
+          AutoSpacing->False],
+         $CellContext`PDy[
+          $CellContext`Jb[]],
+         Editable->False]}]}], 
+      RowBox[{"16", " ", 
+       SqrtBox["2"], " ", 
+       InterpretationBox[
+        StyleBox[
+         RowBox[{"(", 
+          RowBox[{"1", "+", "K"}], ")"}],
+         ShowAutoStyles->False,
+         AutoSpacing->False],
+        $CellContext`OnePlusK[],
+        Editable->False]}]]}], ")"}]}], 
+  InterpretationBox[
+   StyleBox["R",
+    ShowAutoStyles->False,
+    AutoSpacing->False],
+   $CellContext`R[],
+   Editable->False]]], "Output",
+ CellLabel->"Out[696]=",ExpressionUUID->"ce5318c9-a168-4eb9-ad58-389451d91672"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"-", 
+     InterpretationBox[
+      StyleBox[
+       OverscriptBox["J", "_"],
+       ShowAutoStyles->False,
+       AutoSpacing->False],
+      $CellContext`Jb[],
+      Editable->False]}], " ", 
+    InterpretationBox[
+     StyleBox[
+      RowBox[{
+       SubscriptBox["\[PartialD]", "y"], "[", 
+       InterpretationBox[
+        StyleBox["J",
+         ShowAutoStyles->False,
+         AutoSpacing->False],
+        $CellContext`J[],
+        Editable->False], "]"}],
+      ShowAutoStyles->False,
+      AutoSpacing->False],
+     $CellContext`PDy[
+      $CellContext`J[]],
+     Editable->False]}], "+", 
+   RowBox[{
+    InterpretationBox[
+     StyleBox["J",
+      ShowAutoStyles->False,
+      AutoSpacing->False],
+     $CellContext`J[],
+     Editable->False], " ", 
+    InterpretationBox[
+     StyleBox[
+      RowBox[{
+       SubscriptBox["\[PartialD]", "y"], "[", 
+       InterpretationBox[
+        StyleBox[
+         OverscriptBox["J", "_"],
+         ShowAutoStyles->False,
+         AutoSpacing->False],
+        $CellContext`Jb[],
+        Editable->False], "]"}],
+      ShowAutoStyles->False,
+      AutoSpacing->False],
+     $CellContext`PDy[
+      $CellContext`Jb[]],
+     Editable->False]}]}], "//", "InputForm"}]], "Input",
+ CellLabel->
+  "In[697]:=",ExpressionUUID->"1c8b8fe8-4fda-4aa4-8913-6391b79619c6"],
+
+Cell["-(Jb[]*PDy[J[]]) + J[]*PDy[Jb[]]", "Output",
+ CellLabel->
+  "Out[697]//InputForm=",ExpressionUUID->"c37d869c-80a9-48f7-a2d1-\
+b78ae69f7073"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"NPeManual", "=", 
+  RowBox[{
+   FractionBox[
+    SuperscriptBox[
+     RowBox[{"OneMinusY", "[", "]"}], "2"], 
+    RowBox[{"2", 
+     SqrtBox["2"], 
+     RowBox[{"R", "[", "]"}]}]], 
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{"PDy", "[", 
+      RowBox[{"be", "[", "]"}], "]"}], "+", 
+     FractionBox[
+      RowBox[{
+       RowBox[{
+        RowBox[{"J", "[", "]"}], 
+        RowBox[{"PDy", "[", 
+         RowBox[{"Jb", "[", "]"}], "]"}]}], "-", 
+       RowBox[{
+        RowBox[{"Jb", "[", "]"}], 
+        RowBox[{"PDy", "[", 
+         RowBox[{"J", "[", "]"}], "]"}]}]}], 
+      RowBox[{"8", 
+       RowBox[{"OnePlusK", "[", "]"}]}]]}], ")"}]}]}]], "Input",
+ CellLabel->
+  "In[698]:=",ExpressionUUID->"1eb69a7e-ee52-48f1-a98d-3a13b3b84b51"],
+
+Cell[BoxData[
+ FractionBox[
+  RowBox[{
+   SuperscriptBox[
+    InterpretationBox[
+     StyleBox[
+      RowBox[{"(", 
+       RowBox[{"1", "-", "y"}], ")"}],
+      ShowAutoStyles->False,
+      AutoSpacing->False],
+     $CellContext`OneMinusY[],
+     Editable->False], "2"], " ", 
+   RowBox[{"(", 
+    RowBox[{
+     InterpretationBox[
+      StyleBox[
+       RowBox[{
+        SubscriptBox["\[PartialD]", "y"], "[", 
+        InterpretationBox[
+         StyleBox["\[Beta]",
+          ShowAutoStyles->False,
+          AutoSpacing->False],
+         $CellContext`be[],
+         Editable->False], "]"}],
+       ShowAutoStyles->False,
+       AutoSpacing->False],
+      $CellContext`PDy[
+       $CellContext`be[]],
+      Editable->False], "+", 
+     FractionBox[
+      RowBox[{
+       RowBox[{
+        RowBox[{"-", 
+         InterpretationBox[
+          StyleBox[
+           OverscriptBox["J", "_"],
+           ShowAutoStyles->False,
+           AutoSpacing->False],
+          $CellContext`Jb[],
+          Editable->False]}], " ", 
+        InterpretationBox[
+         StyleBox[
+          RowBox[{
+           SubscriptBox["\[PartialD]", "y"], "[", 
+           InterpretationBox[
+            StyleBox["J",
+             ShowAutoStyles->False,
+             AutoSpacing->False],
+            $CellContext`J[],
+            Editable->False], "]"}],
+          ShowAutoStyles->False,
+          AutoSpacing->False],
+         $CellContext`PDy[
+          $CellContext`J[]],
+         Editable->False]}], "+", 
+       RowBox[{
+        InterpretationBox[
+         StyleBox["J",
+          ShowAutoStyles->False,
+          AutoSpacing->False],
+         $CellContext`J[],
+         Editable->False], " ", 
+        InterpretationBox[
+         StyleBox[
+          RowBox[{
+           SubscriptBox["\[PartialD]", "y"], "[", 
+           InterpretationBox[
+            StyleBox[
+             OverscriptBox["J", "_"],
+             ShowAutoStyles->False,
+             AutoSpacing->False],
+            $CellContext`Jb[],
+            Editable->False], "]"}],
+          ShowAutoStyles->False,
+          AutoSpacing->False],
+         $CellContext`PDy[
+          $CellContext`Jb[]],
+         Editable->False]}]}], 
+      RowBox[{"8", " ", 
+       InterpretationBox[
+        StyleBox[
+         RowBox[{"(", 
+          RowBox[{"1", "+", "K"}], ")"}],
+         ShowAutoStyles->False,
+         AutoSpacing->False],
+        $CellContext`OnePlusK[],
+        Editable->False]}]]}], ")"}]}], 
+  RowBox[{"2", " ", 
+   SqrtBox["2"], " ", 
+   InterpretationBox[
+    StyleBox["R",
+     ShowAutoStyles->False,
+     AutoSpacing->False],
+    $CellContext`R[],
+    Editable->False]}]]], "Output",
+ CellLabel->"Out[698]=",ExpressionUUID->"209ca07e-4abd-4915-abd5-b5b1aca1f6c2"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"NPeAuto", "==", "NPeManual"}], "//", "Simplify"}]], "Input",
+ CellLabel->
+  "In[700]:=",ExpressionUUID->"9fd7bcab-340d-47cd-91f4-4ce4260f4664"],
+
+Cell[BoxData["True"], "Output",
+ CellLabel->"Out[700]=",ExpressionUUID->"fbf7d2e0-c4c6-4353-a021-f5ec86bcf64c"]
+}, Open  ]],
+
+Cell["CONTINUE HERE", \
+"Text",ExpressionUUID->"1732e4e3-c58f-48c5-8d44-81ab024d1e4a"]
+}, Open  ]],
 
 Cell[CellGroupData[{
 
