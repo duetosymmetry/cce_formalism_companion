@@ -216,6 +216,15 @@
 
 
 (* ::Text:: *)
+(*The angular connection coefficient*)
+
+
+(* ::Input:: *)
+(*DefTensor[\[CapitalTheta][],{M2, M4}];*)
+(*DefTensor[\[CapitalTheta]b[],{M2, M4},PrintAs->"\!\(\*OverscriptBox[\(\[CapitalTheta]\), \(_\)]\)"];*)
+
+
+(* ::Text:: *)
 (*Tensor representing the Bondi-Sachs radial coordinate*)
 
 
@@ -873,6 +882,8 @@
 (*Conj[qb[A_]]:=q[A];*)
 (*Conj[sphd[A_][exp_]]:=sphd[A][Conj[exp]];*)
 (*Conj[OnePlusK[]]:=OnePlusK[];*)
+(*Conj[\[CapitalTheta][]]:=\[CapitalTheta]b[];*)
+(*Conj[\[CapitalTheta]b[]]:=\[CapitalTheta][];*)
 
 
 (* ::Subsubsection::Closed:: *)
@@ -1374,7 +1385,7 @@
 
 
 (* ::Input:: *)
-(*DefTensor[NPa[],{M4},PrintAs->"\[Alpha]"];DefTensor[NPb[],{M4},PrintAs->"\[Beta]"];DefTensor[NPg[],{M4},PrintAs->"\[Gamma]"];DefTensor[NPe[],{M4},PrintAs->"\[Epsilon]"];*)
+(*DefTensor[NPa[],{M4},PrintAs->"\[Alpha]"];DefTensor[NPb[],{M4},PrintAs->"\!\(\*SubscriptBox[\(\[Beta]\), \(NP\)]\)"];DefTensor[NPg[],{M4},PrintAs->"\[Gamma]"];DefTensor[NPe[],{M4},PrintAs->"\[Epsilon]"];*)
 (*DefTensor[NPk[],{M4},PrintAs->"\[Kappa]"];DefTensor[NPt[],{M4},PrintAs->"\[Tau]"];DefTensor[NPs[],{M4},PrintAs->"\[Sigma]"];DefTensor[NPr[],{M4},PrintAs->"\[Rho]"];*)
 (*DefTensor[NPp[],{M4},PrintAs->"\[Pi]"];DefTensor[NPn[],{M4},PrintAs->"\[Nu]"];DefTensor[NPm[],{M4},PrintAs->"\[Mu]"];DefTensor[NPl[],{M4},PrintAs->"\[Lambda]"];*)
 
@@ -2198,6 +2209,10 @@
 (*	 PDu[exp_]:>PDnu[exp] - (PDnu[R[]] (1 - y[])/R[])PDy[exp]};*)
 
 
+(* ::Input:: *)
+(*PDuJtoH={PDu[J[]]->H[],PDu[Jb[]]->Hb[]};*)
+
+
 (* ::Subsubsection::Closed:: *)
 (*Numerical coordinates automatic rules*)
 
@@ -2516,7 +2531,15 @@
 
 
 (* ::Input:: *)
-(*Print[#[]==(#[]/.SubNPScalars//ScreenDollarIndices)]&/@NPScalars;*)
+(*qqdqTo\[CapitalTheta]=Join[MakeRule[{q[A]qb[-B]sphd[-A]@q[B],\[CapitalTheta][]}],*)
+(*MakeRule[{q[A]q[B]sphd[-A]@qb[-B],-\[CapitalTheta][]}],*)
+(*MakeRule[{qb[A]q[-B]sphd[-A]@qb[B],\[CapitalTheta]b[]}],*)
+(*MakeRule[{qb[A]qb[B]sphd[-A]@q[-B],-\[CapitalTheta]b[]}]];*)
+
+
+(* ::Input:: *)
+(*Column[(#[]==Collect[((#[]/.SubNPScalars/.PDuJtoH/.VtoW//.ScalarPDToNumericalCoords//.ScalarDerivLeibniz//.qqdqTo\[CapitalTheta])/.{y[]->1-OneMinusY[]}//Expand//ScreenDollarIndices),{Exp[-2be[]],OneMinusY[],R[],1+K[]}])&/@NPScalars];*)
+(*%/.{\[CapitalTheta]->Zero,\[CapitalTheta]b->Zero}*)
 
 
 (* ::Section:: *)
