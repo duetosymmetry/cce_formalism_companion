@@ -2170,6 +2170,15 @@
 
 
 (* ::Text:: *)
+(*A common combination*)
+
+
+(* ::Input:: *)
+(*DefTensor[nEthRuponR[],{M4,M2},PrintAs->"\!\(\*FractionBox[\(\[PartialD]' R\), \(R\)]\)"];*)
+(*DefTensor[nEthbarRuponR[],{M4,M2},PrintAs->"\!\(\*FractionBox[\(\*OverscriptBox[\(\[PartialD]\), \(_\)]' R\), \(R\)]\)"];*)
+
+
+(* ::Text:: *)
 (*Use H instead of \!\( *)
 (*\*SubscriptBox[\(\[PartialD]\), \(u\)]J\)*)
 
@@ -2211,6 +2220,10 @@
 
 (* ::Input:: *)
 (*PDuJtoH={PDu[J[]]->H[],PDu[Jb[]]->Hb[]};*)
+
+
+(* ::Input:: *)
+(*nEthRToRatios={nEth[R[]]->R[]nEthRuponR[],nEthbar[R[]]->R[]nEthbarRuponR[]};*)
 
 
 (* ::Subsubsection::Closed:: *)
@@ -2540,6 +2553,42 @@
 (* ::Input:: *)
 (*Column[(#[]==Collect[((#[]/.SubNPScalars/.PDuJtoH/.VtoW//.ScalarPDToNumericalCoords//.ScalarDerivLeibniz//.qqdqTo\[CapitalTheta])/.{y[]->1-OneMinusY[]}//Expand//ScreenDollarIndices),{Exp[-2be[]],OneMinusY[],R[],1+K[]}])&/@NPScalars];*)
 (*%/.{\[CapitalTheta]->Zero,\[CapitalTheta]b->Zero}*)
+
+
+(* ::Subsubsection::Closed:: *)
+(*Weyl scalars in numerical coordinates*)
+
+
+(* ::Input:: *)
+(*(WeylScalarToBondi[Psi0[]]//SimplifyWithTermSort[GatherScalarDerivFactors])//.ScalarPDToNumericalCoords//.ScalarDerivLeibniz/.{y[]->1-OneMinusY[]};*)
+(*Collect[%//NoScalar,{R[],K[],OneMinusY[],PDy[be[]],PDy@PDy@_,PDy@_}]*)
+(*Collect[16 R[]^2 K[]/OneMinusY[]^4 %//Expand,{PDy[be[]],PDy@PDy@_,PDy@_},Simplify]/. {K[]^2->1+J[]Conj[J[]]}*)
+
+
+(* ::Input:: *)
+(*EthbePlusHalfQ = Eth[be[]]+1/2 Qq[];*)
+(*Psi1SimpInner=J[](-2PDy@Conj@Qq[]+PDy@Conj@J[](2EthbePlusHalfQ+J[]Conj[EthbePlusHalfQ]))+*)
+(*(1+K[])(EthbePlusHalfQ(Conj[J[]]PDy[J[]]-J[]PDy[Conj[J[]]])+2(PDy@Qq[]+J[]PDy@Conj@Qq[])*)
+(*-(1+K[])(2PDy@Qq[]+PDy@J[]Conj[EthbePlusHalfQ]));*)
+(*Psi1Simplified=OneMinusY[]^2/(R[]^2 Sqrt[1+K[]] Sqrt[128]) (J[]Conj[EthbePlusHalfQ]-(1+K[])EthbePlusHalfQ*)
+(*+OneMinusY[]((1+K[]) Eth[PDy[be[]]]- J[]Ethbar[PDy[be[]]]*)
+(*+PDy[be[]]( nEthRuponR[]*(1+K[])-J[]nEthbarRuponR[])*)
+(*+1/(4K[]) Psi1SimpInner))*)
+
+
+(* ::Input:: *)
+(*(WeylScalarToBondi[Psi1[]]//SimplifyWithTermSort[GatherScalarDerivFactors])//.ScalarPDToNumericalCoords//.ScalarDerivLeibniz/.{y[]->1-OneMinusY[]}/.nEthRToRatios;*)
+(*Psi1Automatic=Collect[%//NoScalar,{R[],K[],OneMinusY[],PDy[be[]],PDy@PDy@_,PDy@_}]*)
+(*Psi1Automatic-Psi1Simplified//Simplify*)
+
+
+(* ::Input:: *)
+(*LeafCount/@{Psi1Automatic,Psi1Simplified}*)
+
+
+(* ::Input:: *)
+(*(WeylScalarToBondi[Psi2[]]//SimplifyWithTermSort[GatherScalarDerivFactors])//.ScalarPDToNumericalCoords//.ScalarDerivLeibniz/.{y[]->1-OneMinusY[]}/.nEthRToRatios;*)
+(*Psi2Automatic=Collect[%//NoScalar,{Exp[-2be[]],R[],K[],OneMinusY[],PDy[be[]],PDy@PDy@_,PDy@_}]*)
 
 
 (* ::Section:: *)
