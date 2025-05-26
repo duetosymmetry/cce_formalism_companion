@@ -2543,7 +2543,7 @@
 (*CompareEquations[SWEvolutionNumeric//.SubSuplimentaryScalars/.{PDnu[J[]]:>H[],PDnu[Jb[]]:>Hb[]}/.VtoW//.ScalarPDToNumericalCoords,SWEvolutionNumericCondensed//.SubNumericSuplimentaryScalars]*)
 
 
-(* ::Subsubsection::Closed:: *)
+(* ::Subsubsection:: *)
 (*Newman-Penrose spin coefficients in Numerical coordinates*)
 
 
@@ -2596,7 +2596,10 @@
 
 
 (* ::Input:: *)
-(*NPgManual=1/(4Sqrt[2]) Exp[-2be[]](1/(2OnePlusK[]) ((OneMinusY[]^2 (Jb[]PDy[J[]]-J[]PDy[Jb[]]))/(2R[])+(2Hb[]J[]-2H[]Jb[]+Uq[]J[]Ethbar[Jb[]]-Uq[]Jb[]Ethbar[J[]]+Uqb[]J[]Eth[Jb[]]-Uqb[]Jb[]Eth[J[]]))+OneMinusY[]((W[](Jb[]*PDy[J[]]-J[]*PDy[Jb[]]))/(2OnePlusK[])+2PDy[W[]])+(2W[]+Ethbar[Uqb[]]J[]-Eth[Uq[]]Jb[]-Eth[Uqb[]]K[]+Ethbar[Uq[]]K[]))*)
+(*NPgManual=1/(4Sqrt[2]) Exp[-2be[]](1/(2OnePlusK[]) (OneMinusY[](OneMinusY[]/(2R[])+W[])(Jb[]PDy[J[]]-J[]PDy[Jb[]])*)
+(*+(2Hb[]J[]-2H[]Jb[]+Uq[](J[]Ethbar[Jb[]]-Jb[]Ethbar[J[]])+Uqb[](J[]Eth[Jb[]]-Jb[]Eth[J[]])))*)
+(*+2OneMinusY[]PDy[W[]]*)
+(*+(2W[]+J[]Ethbar[Uqb[]]-Jb[]Eth[Uq[]]+K[](Ethbar[Uq[]]-Eth[Uqb[]])))*)
 
 
 (* ::Input:: *)
@@ -2645,6 +2648,42 @@
 
 (* ::Input:: *)
 (*NPrAuto=Collect[(NPr[]/.SubNPScalars/.PDuJtoH/.VtoW//.ScalarPDToNumericalCoords//.ScalarDerivLeibniz)/.{y[]->1-OneMinusY[]}//Simplify,{R[],OneMinusY[]}]*)
+
+
+(* ::Input:: *)
+(*NPpAuto=Collect[((NPp[]/.SubNPScalars/.PDuJtoH/.VtoW//.ScalarPDToNumericalCoords//.ScalarDerivLeibniz)/.{y[]->1-OneMinusY[]}/.{K[]->OnePlusK[]-1}//Expand//ScreenDollarIndices),{OneMinusY[],R[],OnePlusK[]},Simplify]*)
+
+
+(* ::Input:: *)
+(*NPpManual=OneMinusY[]/(8R[]) ((Jb[](Qq[]+2Eth[be[]]))/Sqrt[OnePlusK[]]-Sqrt[OnePlusK[]]Conj[Qq[]+2Eth[be[]]])*)
+
+
+(* ::Input:: *)
+(*NPpAuto==NPpManual/.{OneMinusY[]->1-y[],OnePlusK[]->1+K[]}//Simplify*)
+
+
+(* ::Input:: *)
+(*NPnAuto=Collect[((NPn[]/.SubNPScalars/.PDuJtoH/.VtoW//.ScalarPDToNumericalCoords//.ScalarDerivLeibniz//.qqdqTo\[CapitalTheta])/.{y[]->1-OneMinusY[]}/.{K[]->OnePlusK[]-1}//Expand//ScreenDollarIndices),{Exp[-2be[]],OneMinusY[],R[],1+K[]}]*)
+
+
+(* ::Input:: *)
+(*NPnManual=Exp[-2be[]]/2 ((Jb[]Eth[W[]])/Sqrt[OnePlusK[]]-Sqrt[OnePlusK[]]Ethbar[W[]])*)
+
+
+(* ::Input:: *)
+(*NPnAuto==NPnManual/.{OneMinusY[]->1-y[],OnePlusK[]->1+K[]}//Simplify*)
+
+
+(* ::Input:: *)
+(*NPmAuto=Collect[((NPm[]/.SubNPScalars/.PDuJtoH/.VtoW//.ScalarPDToNumericalCoords//.ScalarDerivLeibniz)/.{y[]->1-OneMinusY[]}//Expand//ScreenDollarIndices),{Exp[-2be[]],OneMinusY[],R[],1+K[]}]*)
+
+
+(* ::Input:: *)
+(*NPmManual=Exp[-2be[]]/(2Sqrt[2]) (Eth[Uqb[]]+Ethbar[Uq[]]-OneMinusY[]/R[]-2W[])*)
+
+
+(* ::Input:: *)
+(*NPmAuto==NPmManual/.{OneMinusY[]->1-y[]}//Simplify*)
 
 
 (* ::Text:: *)
