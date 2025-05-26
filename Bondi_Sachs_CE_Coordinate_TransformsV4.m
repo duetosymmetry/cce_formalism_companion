@@ -2686,8 +2686,34 @@
 (*NPmAuto==NPmManual/.{OneMinusY[]->1-y[]}//Simplify*)
 
 
-(* ::Text:: *)
-(*CONTINUE HERE*)
+(* ::Input:: *)
+(*NPlAuto=Collect[((NPl[]/.SubNPScalars/.PDuJtoH/.VtoW//.ScalarPDToNumericalCoords//.ScalarDerivLeibniz//.qqdqTo\[CapitalTheta])/.{y[]->1-OneMinusY[]}//Expand//ScreenDollarIndices),{Exp[-2be[]],OneMinusY[],R[],1+K[]}]*)
+
+
+(* ::Input:: *)
+(*Simplify[4Sqrt[2]Exp[2be[]]NPlAuto];*)
+(*Collect[%,{OneMinusY[]},SimplifyOnePlusKFactor];*)
+(*NPlAuto2=1/(4Sqrt[2]Exp[2be[]]) Collect[%/.{1+K[]->OnePlusK[]},{OneMinusY[],K[]},Simplify]/.{1+OnePlusK[]->2+K[]}*)
+
+
+(* ::Input:: *)
+(*inner1=OneMinusY[]/(2OnePlusK[]) ((Jb[]^2 PDy[J[]]-PDy[Jb[]])/K[]-(2+K[])PDy[Jb[]])*)
+
+
+(* ::Input:: *)
+(*inner2=2H[]+Uq[]Ethbar[J[]]+Uqb[]Eth[J[]]*)
+
+
+(* ::Input:: *)
+(*NPlManual=Exp[-2be[]]/(4Sqrt[2]) (( OneMinusY[]/R[]+2W[])inner1+2OnePlusK[]Ethbar[Uqb[]]+(Conj[inner2]+2Jb[](Ethbar[Uq[]]-Eth[Uqb[]]))+1/K[] Conj[inner2]-Jb[]^2/(K[]OnePlusK[]) (inner2+2K[]Eth[Uq[]]))*)
+
+
+(* ::Input:: *)
+(*NPlAuto==NPlManual2/.{OnePlusK[]->1+K[]}//Simplify*)
+
+
+(* ::Input:: *)
+(*LeafCount/@{NPlAuto,NPlManual}*)
 
 
 (* ::Subsubsection::Closed:: *)
